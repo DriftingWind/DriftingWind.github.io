@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="漂泊的风">
 <meta property="og:description" content="rxjava、java、android、Retrofit、RxAndroid">
 <meta property="og:image" content="http://o8wlu6q9f.bkt.clouddn.com/5131D0FD-7FE4-40DB-81AD-283CC597D00C.png">
-<meta property="og:updated_time" content="2016-06-17T07:19:34.000Z">
+<meta property="og:updated_time" content="2016-06-17T07:20:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Retrofit、GsonFormat、RxJava、RxAndroid应用实践">
 <meta name="twitter:description" content="rxjava、java、android、Retrofit、RxAndroid">
@@ -116,7 +116,7 @@ login_name    string    是        urlParam    登录名
 pageNumber    int       是        urlParam    页数
 name          string    是        urlParam    查询参数
 </code></pre><p> 找个网络请求工具，我用的是Postmain谷歌浏览器的插件,填上对应的数据，按下send就能拿到对应的json<br>   <img src="http://o8wlu6q9f.bkt.clouddn.com/5131D0FD-7FE4-40DB-81AD-283CC597D00C.png" alt="postmain"><br>   好了，拿到服务端返回json可以创建实体了<br>   先随便创建个实体，我这里创建CustomerReturnBean，直接在实体名称上，点击右键generate…选择GsonFormat（前提：你已经装了这个插件）填入上面返回的json，看看对应的属性类型是否是你想要的，没有问题，点击ok，生成对应的实体。</p>
-<p>###Retrofit实例创建<br>类：AccountsService</p>
+<h3 id="Retrofit实例创建"><a href="#Retrofit实例创建" class="headerlink" title="Retrofit实例创建"></a>Retrofit实例创建</h3><p>类：AccountsService</p>
 <pre><code>public class AccountsService {
 
 private static Retrofit.Builder retrofitBuilder = new Retrofit.Builder()
@@ -220,9 +220,7 @@ public Observable&lt;CustomerReturnBean&gt; searchCustomer(int pageNumber,String
 }
 </code></pre><p>这里拿到数据，具体后面该怎么展示，各位看官随意。</p>
 <p>各位感觉上面有什么错误和建议，欢迎提问谢谢</p>
-<p>###补充：</p>
-<p>###开源让世界更美好   </p>
-<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a></p>
+<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3><h3 id="开源让世界更美好"><a href="#开源让世界更美好" class="headerlink" title="开源让世界更美好"></a>开源让世界更美好</h3><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a></p>
 <p><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1122/3711.html" target="_blank" rel="external">Rxlifecycle使用详解，解决RxJava内存泄露问题</a></p>
 
     
