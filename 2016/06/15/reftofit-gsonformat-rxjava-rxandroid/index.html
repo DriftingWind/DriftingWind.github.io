@@ -16,11 +16,11 @@
   <meta name="description" content="rxjava、java、android、Retrofit、RxAndroid">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Retrofit、GsonFormat、RxJava、RxAndroid应用实践">
-<meta property="og:url" content="http://yoursite.com/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/index.html">
 <meta property="og:site_name" content="漂泊的风">
 <meta property="og:description" content="rxjava、java、android、Retrofit、RxAndroid">
 <meta property="og:image" content="http://o8wlu6q9f.bkt.clouddn.com/5131D0FD-7FE4-40DB-81AD-283CC597D00C.png">
-<meta property="og:updated_time" content="2016-06-17T07:20:56.000Z">
+<meta property="og:updated_time" content="2016-06-17T07:26:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Retrofit、GsonFormat、RxJava、RxAndroid应用实践">
 <meta name="twitter:description" content="rxjava、java、android、Retrofit、RxAndroid">
@@ -64,9 +64,9 @@
   <header>
     
       <div class="icon"></div>
-      <a href="/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/">
-  <time datetime="2016-06-17T14:11:54.000Z">
-    2016-06-17
+      <a href="/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/">
+  <time datetime="2016-06-15T14:11:54.000Z">
+    2016-06-15
   </time>
 </a>
     
@@ -220,7 +220,10 @@ public Observable&lt;CustomerReturnBean&gt; searchCustomer(int pageNumber,String
 }
 </code></pre><p>这里拿到数据，具体后面该怎么展示，各位看官随意。</p>
 <p>各位感觉上面有什么错误和建议，欢迎提问谢谢</p>
-<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3><h3 id="开源让世界更美好"><a href="#开源让世界更美好" class="headerlink" title="开源让世界更美好"></a>开源让世界更美好</h3><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a></p>
+<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3><p>有时候，我们需要延迟执行和放重复点击可以用如下：</p>
+<pre><code>.throttleFirst(10,TimeUnit.SECONDS)//重复点击处理
+.delay(manualCheck?0:3, TimeUnit.SECONDS)//延迟执行
+</code></pre><h3 id="开源让世界更美好"><a href="#开源让世界更美好" class="headerlink" title="开源让世界更美好"></a>开源让世界更美好</h3><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a></p>
 <p><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1122/3711.html" target="_blank" rel="external">Rxlifecycle使用详解，解决RxJava内存泄露问题</a></p>
 
     
@@ -289,7 +292,7 @@ public Observable&lt;CustomerReturnBean&gt; searchCustomer(int pageNumber,String
   <ul class="entry">
     
       <li>
-        <a href="/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/">Retrofit、GsonFormat、RxJava、RxAndroid应用实践</a>
+        <a href="/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/">Retrofit、GsonFormat、RxJava、RxAndroid应用实践</a>
       </li>
     
   </ul>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-17T07:20:56.000Z</updated>
+  <updated>2016-06-17T07:26:51.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Retrofit、GsonFormat、RxJava、RxAndroid应用实践</title>
-    <link href="http://yoursite.com/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/"/>
-    <id>http://yoursite.com/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/</id>
-    <published>2016-06-17T14:11:54.000Z</published>
-    <updated>2016-06-17T07:20:56.000Z</updated>
+    <link href="http://yoursite.com/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/"/>
+    <id>http://yoursite.com/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/</id>
+    <published>2016-06-15T14:11:54.000Z</published>
+    <updated>2016-06-17T07:26:51.000Z</updated>
     
     <content type="html">&lt;p&gt;最近看了简书上很多说retrofit与rxjava的文章，所以今天我也来讲下我是如何用这些最新的东西的。废话不多说，直接上代码&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -163,7 +163,10 @@ public Observable&amp;lt;CustomerReturnBean&amp;gt; searchCustomer(int pageNumbe
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里拿到数据，具体后面该怎么展示，各位看官随意。&lt;/p&gt;
 &lt;p&gt;各位感觉上面有什么错误和建议，欢迎提问谢谢&lt;/p&gt;
-&lt;h3 id=&quot;补充：&quot;&gt;&lt;a href=&quot;#补充：&quot; class=&quot;headerlink&quot; title=&quot;补充：&quot;&gt;&lt;/a&gt;补充：&lt;/h3&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://gank.io/post/560e15be2dca930e00da1083&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;给 Android 开发者的 RxJava 详解&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;补充：&quot;&gt;&lt;a href=&quot;#补充：&quot; class=&quot;headerlink&quot; title=&quot;补充：&quot;&gt;&lt;/a&gt;补充：&lt;/h3&gt;&lt;p&gt;有时候，我们需要延迟执行和放重复点击可以用如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.throttleFirst(10,TimeUnit.SECONDS)//重复点击处理
+.delay(manualCheck?0:3, TimeUnit.SECONDS)//延迟执行
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://gank.io/post/560e15be2dca930e00da1083&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;给 Android 开发者的 RxJava 详解&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1122/3711.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rxlifecycle使用详解，解决RxJava内存泄露问题&lt;/a&gt;&lt;/p&gt;
 </content>
     
