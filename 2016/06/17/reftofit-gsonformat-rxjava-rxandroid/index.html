@@ -1,0 +1,238 @@
+<a href="https://github.com/DriftingWind"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo2.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>Retrofit、GsonFormat、RxJava、RxAndroid应用实践 | 漂泊的风</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="winston">
+  
+  
+    <meta name="description" content="rxjava、java、android、Retrofit、RxAndroid">
+  
+  <meta name="description" content="rxjava、java、android、Retrofit、RxAndroid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retrofit、GsonFormat、RxJava、RxAndroid应用实践">
+<meta property="og:url" content="http://yoursite.com/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/index.html">
+<meta property="og:site_name" content="漂泊的风">
+<meta property="og:description" content="rxjava、java、android、Retrofit、RxAndroid">
+<meta property="og:updated_time" content="2016-06-17T03:38:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Retrofit、GsonFormat、RxJava、RxAndroid应用实践">
+<meta name="twitter:description" content="rxjava、java、android、Retrofit、RxAndroid">
+  
+    <link rel="alternate" href="/atom.xml" title="漂泊的风" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">漂泊的风</a></h1>
+    <p><a href="/">懂得倾听、懂得尊重、承担责任 才算成长</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/">
+  <time datetime="2016-06-17T14:11:54.000Z">
+    2016-06-17
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">Retrofit、GsonFormat、RxJava、RxAndroid应用实践</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>最近看了简书上很多说retrofit与rxjava的文章，所以今天我也来讲下我是如何用这些最新的东西的。废话不多说，直接上代码</p>
+<a id="more"></a>
+<h3 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h3><p>开发工具肯定是androidstudio，这点以后都不用说了吧，因为现在github上很多东西都是支持androidstudio，目前使用感觉很方便，简单一行，就能把所有的功能引入进来。接下来我会用到rxjava rxandroid retrofit rxlifecycle rxbinding 具体的这些事什么请自行去查阅，最后的时候，我会放在相关具体介绍的链接</p>
+<h6 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h6><p>下面一些*version是我在gradle中定义的变量，防止我每次都要改多次的问题</p>
+<pre><code>ext {
+    butterknifeVersion = &apos;8.0.1&apos;
+    supportVersion = &apos;23.2.1&apos;
+    retrofit2Version = &apos;2.0.2&apos;
+    rxlifecycleVersion = &apos;0.5.0&apos;
+}
+</code></pre><p>下面的拷贝项目的build.gradle 而不是工程的里面（又啰嗦了）</p>
+<pre><code>compile &apos;io.reactivex:rxjava:1.1.3&apos;
+compile &apos;io.reactivex:rxandroid:1.1.0&apos;
+compile &quot;com.squareup.retrofit2:retrofit:${retrofit2Version}&quot;
+compile &quot;com.squareup.retrofit2:converter-gson:${retrofit2Version}&quot;
+compile &quot;com.squareup.retrofit2:adapter-rxjava:${retrofit2Version}&quot;
+ compile &quot;com.trello:rxlifecycle:${rxlifecycleVersion}&quot;
+compile &quot;com.trello:rxlifecycle-components:${rxlifecycleVersion}&quot;
+</code></pre><h6 id="rxlifecycle说明"><a href="#rxlifecycle说明" class="headerlink" title="rxlifecycle说明"></a>rxlifecycle说明</h6><p>此处使用rxlifecycle来处理一些订阅的回收</p>
+<blockquote>
+<p><a href="https://github.com/trello/RxLifecycle" target="_blank" rel="external">https://github.com/trello/RxLifecycle</a>就使被用来严格控制由于发布了一个订阅后，由于没有及时取消，导致Activity/Fragment无法销毁导致的内存泄露。</p>
+</blockquote>
+<p>既然我们要使用rxlifecycle就要按照它的规则来，我把目前的我的BaseActivity 继承 RxAppCompatActivity。具体使用的时候，我再说</p>
+<hr>
+<h3 id="GsonFormat使用"><a href="#GsonFormat使用" class="headerlink" title="GsonFormat使用"></a>GsonFormat使用</h3><p>假如服务端给我个接口，该接口返回json数据。</p>
+<pre><code>接口地址：http://ip:端口/customer/getAppCutomerList 
+请求方式：GET
+请求参数(header):
+参数名        类型        必填        参数位置        描述
+accessToken    string    是        header        token
+-------------------------------------------
+请求参数(urlParam):
+参数名        类型        必填        参数位置        描述
+login_name    string    是        urlParam    登录名
+pageNumber    int        是        urlParam    页数
+name        string    是        urlParam    查询参数
+</code></pre><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1122/3711.html" target="_blank" rel="external">Rxlifecycle使用详解，解决RxJava内存泄露问题</a></p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/Rxjava/">Rxjava</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/java/">java</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div class="ds-thread" data-title="Retrofit、GsonFormat、RxJava、RxAndroid应用实践">
+  </div>
+</section>
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Rxjava/">Rxjava</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/java/" style="font-size: 10px;">java</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近的文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/">Retrofit、GsonFormat、RxJava、RxAndroid应用实践</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2016 <a href="/">winston</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+   <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'driftingwind' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>

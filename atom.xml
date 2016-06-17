@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>漂泊的风</title>
+  <subtitle>懂得倾听、懂得尊重、承担责任 才算成长</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-06-17T03:38:09.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>winston</name>
+    <email>858156848@qq.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Retrofit、GsonFormat、RxJava、RxAndroid应用实践</title>
+    <link href="http://yoursite.com/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/"/>
+    <id>http://yoursite.com/2016/06/17/reftofit-gsonformat-rxjava-rxandroid/</id>
+    <published>2016-06-17T14:11:54.000Z</published>
+    <updated>2016-06-17T03:38:09.000Z</updated>
+    
+    <content type="html">&lt;p&gt;最近看了简书上很多说retrofit与rxjava的文章，所以今天我也来讲下我是如何用这些最新的东西的。废话不多说，直接上代码&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;引入依赖&quot;&gt;&lt;a href=&quot;#引入依赖&quot; class=&quot;headerlink&quot; title=&quot;引入依赖&quot;&gt;&lt;/a&gt;引入依赖&lt;/h3&gt;&lt;p&gt;开发工具肯定是androidstudio，这点以后都不用说了吧，因为现在github上很多东西都是支持androidstudio，目前使用感觉很方便，简单一行，就能把所有的功能引入进来。接下来我会用到rxjava rxandroid retrofit rxlifecycle rxbinding 具体的这些事什么请自行去查阅，最后的时候，我会放在相关具体介绍的链接&lt;/p&gt;
+&lt;h6 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot; class=&quot;headerlink&quot; title=&quot;说明&quot;&gt;&lt;/a&gt;说明&lt;/h6&gt;&lt;p&gt;下面一些*version是我在gradle中定义的变量，防止我每次都要改多次的问题&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ext {
+    butterknifeVersion = &amp;apos;8.0.1&amp;apos;
+    supportVersion = &amp;apos;23.2.1&amp;apos;
+    retrofit2Version = &amp;apos;2.0.2&amp;apos;
+    rxlifecycleVersion = &amp;apos;0.5.0&amp;apos;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;下面的拷贝项目的build.gradle 而不是工程的里面（又啰嗦了）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;compile &amp;apos;io.reactivex:rxjava:1.1.3&amp;apos;
+compile &amp;apos;io.reactivex:rxandroid:1.1.0&amp;apos;
+compile &amp;quot;com.squareup.retrofit2:retrofit:${retrofit2Version}&amp;quot;
+compile &amp;quot;com.squareup.retrofit2:converter-gson:${retrofit2Version}&amp;quot;
+compile &amp;quot;com.squareup.retrofit2:adapter-rxjava:${retrofit2Version}&amp;quot;
+ compile &amp;quot;com.trello:rxlifecycle:${rxlifecycleVersion}&amp;quot;
+compile &amp;quot;com.trello:rxlifecycle-components:${rxlifecycleVersion}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;rxlifecycle说明&quot;&gt;&lt;a href=&quot;#rxlifecycle说明&quot; class=&quot;headerlink&quot; title=&quot;rxlifecycle说明&quot;&gt;&lt;/a&gt;rxlifecycle说明&lt;/h6&gt;&lt;p&gt;此处使用rxlifecycle来处理一些订阅的回收&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/trello/RxLifecycle&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/trello/RxLifecycle&lt;/a&gt;就使被用来严格控制由于发布了一个订阅后，由于没有及时取消，导致Activity/Fragment无法销毁导致的内存泄露。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;既然我们要使用rxlifecycle就要按照它的规则来，我把目前的我的BaseActivity 继承 RxAppCompatActivity。具体使用的时候，我再说&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;GsonFormat使用&quot;&gt;&lt;a href=&quot;#GsonFormat使用&quot; class=&quot;headerlink&quot; title=&quot;GsonFormat使用&quot;&gt;&lt;/a&gt;GsonFormat使用&lt;/h3&gt;&lt;p&gt;假如服务端给我个接口，该接口返回json数据。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;接口地址：http://ip:端口/customer/getAppCutomerList 
+请求方式：GET
+请求参数(header):
+参数名        类型        必填        参数位置        描述
+accessToken    string    是        header        token
+-------------------------------------------
+请求参数(urlParam):
+参数名        类型        必填        参数位置        描述
+login_name    string    是        urlParam    登录名
+pageNumber    int        是        urlParam    页数
+name        string    是        urlParam    查询参数
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1122/3711.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rxlifecycle使用详解，解决RxJava内存泄露问题&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      rxjava、java、android、Retrofit、RxAndroid
+    
+    </summary>
+    
+      <category term="Rxjava" scheme="http://yoursite.com/categories/Rxjava/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+</feed>
