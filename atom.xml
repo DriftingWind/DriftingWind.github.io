@@ -4,9 +4,9 @@
   <subtitle>懂得倾听、懂得尊重、承担责任 才算成长</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://driftingwind.github.io/"/>
   <updated>2016-06-17T07:55:55.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://driftingwind.github.io/</id>
   
   <author>
     <name>winston</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Retrofit、GsonFormat、RxJava、RxAndroid简单实践</title>
-    <link href="http://yoursite.com/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/"/>
-    <id>http://yoursite.com/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/</id>
+    <link href="http://driftingwind.github.io/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/"/>
+    <id>http://driftingwind.github.io/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/</id>
     <published>2016-06-15T14:11:54.000Z</published>
     <updated>2016-06-17T07:55:55.000Z</updated>
     
@@ -176,20 +176,20 @@ public Observable&amp;lt;CustomerReturnBean&amp;gt; searchCustomer(int pageNumbe
     
     </summary>
     
-      <category term="Retrofit" scheme="http://yoursite.com/categories/Retrofit/"/>
+      <category term="Retrofit" scheme="http://driftingwind.github.io/categories/Retrofit/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://driftingwind.github.io/tags/Java/"/>
     
-      <category term="RxJava" scheme="http://yoursite.com/tags/RxJava/"/>
+      <category term="RxJava" scheme="http://driftingwind.github.io/tags/RxJava/"/>
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="http://driftingwind.github.io/tags/Android/"/>
     
-      <category term="Retrofit" scheme="http://yoursite.com/tags/Retrofit/"/>
+      <category term="Retrofit" scheme="http://driftingwind.github.io/tags/Retrofit/"/>
     
-      <category term="RxAnroid" scheme="http://yoursite.com/tags/RxAnroid/"/>
+      <category term="RxAnroid" scheme="http://driftingwind.github.io/tags/RxAnroid/"/>
     
-      <category term="GsonFormat" scheme="http://yoursite.com/tags/GsonFormat/"/>
+      <category term="GsonFormat" scheme="http://driftingwind.github.io/tags/GsonFormat/"/>
     
   </entry>
   
