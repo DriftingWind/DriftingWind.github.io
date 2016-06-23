@@ -20,9 +20,9 @@
 <meta property="og:site_name" content="漂泊的风">
 <meta property="og:description" content="AwesomeSplash、GIMP、PicGif、Splash">
 <meta property="og:image" content="http://o8wlu6q9f.bkt.clouddn.com/%E7%A7%BB%E5%8A%A8%E6%89%A7%E6%B3%95.gif">
-<meta property="og:image" content="http://o8wlu6q9f.bkt.clouddn.com/GIMP%E5%B7%A5%E5%85%B7%E7%AE%B1.png =100x400">
+<meta property="og:image" content="http://o8wlu6q9f.bkt.clouddn.com/GIMP%E5%B7%A5%E5%85%B7%E7%AE%B1.png">
 <meta property="og:image" content="http://o8wlu6q9f.bkt.clouddn.com/%E8%B7%AF%E5%BE%84%E9%9D%A2%E6%9D%BF.png">
-<meta property="og:updated_time" content="2016-06-23T16:08:46.000Z">
+<meta property="og:updated_time" content="2016-06-23T16:09:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一步步教你利用AwesomeSplash开源项目做炫酷启动页">
 <meta name="twitter:description" content="AwesomeSplash、GIMP、PicGif、Splash">
@@ -179,7 +179,7 @@
 <p>So before diving into AwesomeSplash library, look into the libraries. Especially make sure you understand the concept of SVG path and look deeply on how to <a href="http://www.useragentman.com/blog/2013/04/26/how-to-create-svg-paths-easily-using-the-gimp/" target="_blank" rel="external">create</a> you custom svg (and get the string values needed for AwesomeSplash).</p>
 </blockquote>
 <p><code>create</code>的链接里说了，用GIMP创建的svg内的path才能用到，目前我试了一些svg生成工具。GIMP下载地址我会放在末尾.</p>
-<p>我这里从美工哪里拿到一个“移动执法.png“ 图片，然后用GIMP打开。如果你没有看到下面 工具箱<br><img src="http://o8wlu6q9f.bkt.clouddn.com/GIMP%E5%B7%A5%E5%85%B7%E7%AE%B1.png =100x400" alt="GIMP工具箱"><br>菜单 -&gt; <code>工具</code> -&gt; <code>工具箱（或新建工具箱）</code>就会弹出工具箱，<br>然后选择 <code>模糊选择工具</code>(上图工具箱内第二版第2个)，然后把鼠标移动到图片上使你需要的汉字都变成虚线闪烁，这个时候，你会发现整个图片，包裹边框都变闪烁虚线了，但是我这里就上面那4个字变虚线就行了，我不要边框。这时候，你选择菜单 <code>查看</code> 点一下 <code>显示图层边界</code>，把当前选项前面的勾去掉，然后在菜单—&gt; <code>选择</code>-<code>反转</code>，你就会发现边框闪烁虚线没有了。</p>
+<p>我这里从美工哪里拿到一个“移动执法.png“ 图片，然后用GIMP打开。如果你没有看到下面 工具箱<br><img src="http://o8wlu6q9f.bkt.clouddn.com/GIMP%E5%B7%A5%E5%85%B7%E7%AE%B1.png" alt="GIMP工具箱"><br>菜单 -&gt; <code>工具</code> -&gt; <code>工具箱（或新建工具箱）</code>就会弹出工具箱，<br>然后选择 <code>模糊选择工具</code>(上图工具箱内第二版第2个)，然后把鼠标移动到图片上使你需要的汉字都变成虚线闪烁，这个时候，你会发现整个图片，包裹边框都变闪烁虚线了，但是我这里就上面那4个字变虚线就行了，我不要边框。这时候，你选择菜单 <code>查看</code> 点一下 <code>显示图层边界</code>，把当前选项前面的勾去掉，然后在菜单—&gt; <code>选择</code>-<code>反转</code>，你就会发现边框闪烁虚线没有了。</p>
 <h3 id="生成SVG"><a href="#生成SVG" class="headerlink" title="生成SVG"></a>生成SVG</h3><p>然后看到右边路径面板如下图 标注的<code>红色按钮</code> 点击</p>
 <p><img src="http://o8wlu6q9f.bkt.clouddn.com/%E8%B7%AF%E5%BE%84%E9%9D%A2%E6%9D%BF.png" alt="路径按钮"></p>
 <p>点击后会在当前路径面板生成 选区 ，在<code>选区</code>上点击右键选择<code>导出路径</code> 填上名称比如 测试.svg,然后选择保存路径就会生成svg。</p>
