@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://driftingwind.github.io/"/>
-  <updated>2016-06-23T16:25:07.000Z</updated>
+  <updated>2016-06-23T16:38:29.000Z</updated>
   <id>http://driftingwind.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>一些命令记录</title>
+    <title>一些命令和文章的记录</title>
     <link href="http://driftingwind.github.io/2016/06/24/command_notes/"/>
     <id>http://driftingwind.github.io/2016/06/24/command_notes/</id>
     <published>2016-06-23T16:14:54.000Z</published>
-    <updated>2016-06-23T16:25:07.000Z</updated>
+    <updated>2016-06-23T16:38:29.000Z</updated>
     
     <content type="html">&lt;p&gt;平时用到的命令记录，防止忘记，好记性不如烂笔头。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Hexo-部署一些命令&quot;&gt;&lt;a href=&quot;#Hexo-部署一些命令&quot; class=&quot;headerlink&quot; title=&quot;Hexo 部署一些命令&quot;&gt;&lt;/a&gt;Hexo 部署一些命令&lt;/h3&gt;&lt;p&gt;我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh&lt;br&gt;nvm ls 列出当前安装的node版本&lt;/p&gt;
@@ -28,9 +28,19 @@
 &lt;p&gt;hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d 发布(清理 生成 部署)&lt;/p&gt;
 &lt;h3 id=&quot;命令行切换&quot;&gt;&lt;a href=&quot;#命令行切换&quot; class=&quot;headerlink&quot; title=&quot;命令行切换&quot;&gt;&lt;/a&gt;命令行切换&lt;/h3&gt;&lt;p&gt;切换回&lt;code&gt;bash&lt;/code&gt;的命令是chsh -s /bin/bash&lt;/p&gt;
 &lt;p&gt;切换回&lt;code&gt;zsh&lt;/code&gt;的命令是chsh -s /bin/zsh&lt;/p&gt;
+&lt;h3 id=&quot;android源码编译&quot;&gt;&lt;a href=&quot;#android源码编译&quot; class=&quot;headerlink&quot; title=&quot;android源码编译&quot;&gt;&lt;/a&gt;android源码编译&lt;/h3&gt;&lt;p&gt;在&lt;a href=&quot;http://blog.csdn.net/wl9739/article/details/51429242&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android源码的下载、编译与导入到Android Studio&lt;/a&gt; 可能会出现下面的问题：&lt;br&gt;执行POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg 出现 &lt;code&gt;Port gmake not found&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;根据官方文档在安装了MacPorts之后，使用MacPorts安装依赖工具时，可能会遇到&lt;code&gt;Port gmake not found&lt;/code&gt;的错误，在安装之前需要先执行下面的命令。&lt;/p&gt;
+&lt;p&gt;sudo port -d sync&lt;br&gt;然后就可以安装相关的工具了。&lt;/p&gt;
+&lt;p&gt;POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果安装始终失败，请直接写下载源码，下载完成后，再执行上面的命令试下&lt;/p&gt;
+&lt;p&gt;在上面文章内，我运行的时候，&lt;code&gt;没有下载驱动&lt;/code&gt;，也成功启动模拟器，进入系统了&lt;/p&gt;
 &lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool&amp;amp;utm_medium=referral&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo你的博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/4eaddcbe4d12&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;5分钟 搭建免费个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1122/3711.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rxlifecycle使用详解，解决RxJava内存泄露问题&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/wl9739/article/details/51429242&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android源码的下载、编译与导入到Android Studio&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://liuzhichao.com/2016/osx-download-and-build-android-source.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OS X 10.11下载和编译Android6.0源码&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android 镜像使用帮助&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
