@@ -4,9 +4,9 @@
   <subtitle>懂得倾听、懂得尊重、承担责任 才算成长</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://driftingwind.github.io/"/>
+  <link href="http://iaskwind.com/"/>
   <updated>2016-06-24T01:14:03.000Z</updated>
-  <id>http://driftingwind.github.io/</id>
+  <id>http://iaskwind.com/</id>
   
   <author>
     <name>winston</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>一些命令和文章的记录</title>
-    <link href="http://driftingwind.github.io/2016/06/24/command_notes/"/>
-    <id>http://driftingwind.github.io/2016/06/24/command_notes/</id>
+    <link href="http://iaskwind.com/2016/06/24/command_notes/"/>
+    <id>http://iaskwind.com/2016/06/24/command_notes/</id>
     <published>2016-06-23T16:14:54.000Z</published>
     <updated>2016-06-24T01:14:03.000Z</updated>
     
@@ -50,23 +50,23 @@
     
     </summary>
     
-      <category term="sh" scheme="http://driftingwind.github.io/categories/sh/"/>
+      <category term="sh" scheme="http://iaskwind.com/categories/sh/"/>
     
     
-      <category term="Hexo" scheme="http://driftingwind.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://iaskwind.com/tags/Hexo/"/>
     
-      <category term="bash" scheme="http://driftingwind.github.io/tags/bash/"/>
+      <category term="bash" scheme="http://iaskwind.com/tags/bash/"/>
     
-      <category term="zsh" scheme="http://driftingwind.github.io/tags/zsh/"/>
+      <category term="zsh" scheme="http://iaskwind.com/tags/zsh/"/>
     
-      <category term="nvm" scheme="http://driftingwind.github.io/tags/nvm/"/>
+      <category term="nvm" scheme="http://iaskwind.com/tags/nvm/"/>
     
   </entry>
   
   <entry>
     <title>一步步教你利用AwesomeSplash开源项目做炫酷启动页</title>
-    <link href="http://driftingwind.github.io/2016/06/23/AwesomeSplash_svgpath/"/>
-    <id>http://driftingwind.github.io/2016/06/23/AwesomeSplash_svgpath/</id>
+    <link href="http://iaskwind.com/2016/06/23/AwesomeSplash_svgpath/"/>
+    <id>http://iaskwind.com/2016/06/23/AwesomeSplash_svgpath/</id>
     <published>2016-06-23T14:26:33.000Z</published>
     <updated>2016-06-23T16:43:09.000Z</updated>
     
@@ -227,21 +227,21 @@ configSplash.setAnimTitleDuration(0);
     
     </summary>
     
-      <category term="Splash" scheme="http://driftingwind.github.io/categories/Splash/"/>
+      <category term="Splash" scheme="http://iaskwind.com/categories/Splash/"/>
     
     
-      <category term="AwesomeSplash" scheme="http://driftingwind.github.io/tags/AwesomeSplash/"/>
+      <category term="AwesomeSplash" scheme="http://iaskwind.com/tags/AwesomeSplash/"/>
     
-      <category term="GIMP" scheme="http://driftingwind.github.io/tags/GIMP/"/>
+      <category term="GIMP" scheme="http://iaskwind.com/tags/GIMP/"/>
     
-      <category term="PicGif" scheme="http://driftingwind.github.io/tags/PicGif/"/>
+      <category term="PicGif" scheme="http://iaskwind.com/tags/PicGif/"/>
     
   </entry>
   
   <entry>
     <title>Retrofit、GsonFormat、RxJava、RxAndroid简单实践</title>
-    <link href="http://driftingwind.github.io/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/"/>
-    <id>http://driftingwind.github.io/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/</id>
+    <link href="http://iaskwind.com/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/"/>
+    <id>http://iaskwind.com/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/</id>
     <published>2016-06-15T14:11:54.000Z</published>
     <updated>2016-06-17T07:55:55.000Z</updated>
     
@@ -399,20 +399,20 @@ public Observable&amp;lt;CustomerReturnBean&amp;gt; searchCustomer(int pageNumbe
     
     </summary>
     
-      <category term="Retrofit" scheme="http://driftingwind.github.io/categories/Retrofit/"/>
+      <category term="Retrofit" scheme="http://iaskwind.com/categories/Retrofit/"/>
     
     
-      <category term="Java" scheme="http://driftingwind.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://iaskwind.com/tags/Java/"/>
     
-      <category term="RxJava" scheme="http://driftingwind.github.io/tags/RxJava/"/>
+      <category term="RxJava" scheme="http://iaskwind.com/tags/RxJava/"/>
     
-      <category term="Android" scheme="http://driftingwind.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://iaskwind.com/tags/Android/"/>
     
-      <category term="Retrofit" scheme="http://driftingwind.github.io/tags/Retrofit/"/>
+      <category term="Retrofit" scheme="http://iaskwind.com/tags/Retrofit/"/>
     
-      <category term="RxAnroid" scheme="http://driftingwind.github.io/tags/RxAnroid/"/>
+      <category term="RxAnroid" scheme="http://iaskwind.com/tags/RxAnroid/"/>
     
-      <category term="GsonFormat" scheme="http://driftingwind.github.io/tags/GsonFormat/"/>
+      <category term="GsonFormat" scheme="http://iaskwind.com/tags/GsonFormat/"/>
     
   </entry>
   
