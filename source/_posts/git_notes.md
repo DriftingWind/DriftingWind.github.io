@@ -11,11 +11,11 @@ git clone git tag 基本操作以及gitignore
 ### Git Clone 项目基本命令
 
 
-######Git global setup
+###### Git global setup
 	git config --global user.name "IAskWind"
 	git config --global user.email "iaskwind@foxmail.com"
 	
-######Create a new repository	
+###### Create a new repository	
 	git clone https://github.com/IAskWind/IAWExtensionTool.git
 	cd IAWExtensionTool
 	touch README.md
@@ -23,7 +23,7 @@ git clone git tag 基本操作以及gitignore
 	git commit -m "add README"
 	git push -u origin master
 
-######Existing folder or Git repository
+###### Existing folder or Git repository
 	cd existing_folder
 	git init
 	git remote add origin https://github.com/IAskWind/IAWExtensionTool.git
