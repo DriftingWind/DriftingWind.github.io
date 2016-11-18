@@ -5,24 +5,24 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>一些命令和文章的记录 | IAsk风</title>
+  <title>git 基本命令 | IAsk风</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
     <meta name="author" content="IAskWind">
   
   
-    <meta name="description" content="Hexo、bash、zsh、nvm">
+    <meta name="description" content="git">
   
-  <meta name="description" content="Hexo、bash、zsh、nvm">
+  <meta name="description" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些命令和文章的记录">
-<meta property="og:url" content="http://iaskwind.com/2016/06/24/command_notes/index.html">
+<meta property="og:title" content="git 基本命令">
+<meta property="og:url" content="http://iaskwind.com/2016/11/18/git_notes/index.html">
 <meta property="og:site_name" content="IAsk风">
-<meta property="og:description" content="Hexo、bash、zsh、nvm">
-<meta property="og:updated_time" content="2016-06-24T01:14:03.000Z">
+<meta property="og:description" content="git">
+<meta property="og:updated_time" content="2016-11-18T09:42:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一些命令和文章的记录">
-<meta name="twitter:description" content="Hexo、bash、zsh、nvm">
+<meta name="twitter:title" content="git 基本命令">
+<meta name="twitter:description" content="git">
   
     <link rel="alternate" href="/atom.xml" title="IAsk风" type="application/atom+xml">
   
@@ -62,55 +62,46 @@
   <header>
     
       <div class="icon"></div>
-      <a href="/2016/06/24/command_notes/">
-  <time datetime="2016-06-23T16:14:54.000Z">
-    2016-06-24
+      <a href="/2016/11/18/git_notes/">
+  <time datetime="2016-11-18T09:14:32.000Z">
+    2016-11-18
   </time>
 </a>
     
     
   
-    <h1 class="title">一些命令和文章的记录</h1>
+    <h1 class="title">git 基本命令</h1>
   
 
   </header>
   
   <div class="entry">
     
-    转载请附带原文地址:<a href="/2016/06/24/command_notes/">http://iaskwind.com/2016/06/24/command_notes/</a>
-      <p>平时用到的命令记录，防止忘记，好记性不如烂笔头。</p>
+    转载请附带原文地址:<a href="/2016/11/18/git_notes/">http://iaskwind.com/2016/11/18/git_notes/</a>
+      <p>git clone git tag 基本操作以及gitignore</p>
 <a id="more"></a>
-<h3 id="Hexo-部署一些命令"><a href="#Hexo-部署一些命令" class="headerlink" title="Hexo 部署一些命令"></a>Hexo 部署一些命令</h3><p>我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh<br>nvm ls 列出当前安装的node版本</p>
-<p>nvm use 用具体的版本，然后hexo 命令就能使用了，否则会出现 zsh: command not found: hexo</p>
-<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 发布(清理 生成 部署)</p>
-<h3 id="命令行切换"><a href="#命令行切换" class="headerlink" title="命令行切换"></a>命令行切换</h3><p>切换回<code>bash</code>的命令是chsh -s /bin/bash</p>
-<p>切换回<code>zsh</code>的命令是chsh -s /bin/zsh</p>
-<h3 id="android源码编译"><a href="#android源码编译" class="headerlink" title="android源码编译"></a>android源码编译</h3><p>在<a href="http://blog.csdn.net/wl9739/article/details/51429242" target="_blank" rel="external">Android源码的下载、编译与导入到Android Studio</a> 可能会出现下面的问题：<br>执行POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg 出现 <code>Port gmake not found</code></p>
-<blockquote>
-<p>根据官方文档在安装了MacPorts之后，使用MacPorts安装依赖工具时，可能会遇到<code>Port gmake not found</code>的错误，在安装之前需要先执行下面的命令。</p>
-<p>sudo port -d sync<br>然后就可以安装相关的工具了。</p>
-<p>POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg</p>
-</blockquote>
-<p>如果安装始终失败，请直接写下载源码，下载完成后，再执行上面的命令试下</p>
-<p>在上面文章内，我运行的时候，<code>没有下载驱动</code>，也成功启动模拟器，进入系统了</p>
-<h3 id="开源让世界更美好"><a href="#开源让世界更美好" class="headerlink" title="开源让世界更美好"></a>开源让世界更美好</h3><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><a href="http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">Hexo你的博客</a></p>
-<p><a href="http://www.jianshu.com/p/4eaddcbe4d12" target="_blank" rel="external">5分钟 搭建免费个人博客</a></p>
-<p><a href="http://blog.csdn.net/wl9739/article/details/51429242" target="_blank" rel="external">Android源码的下载、编译与导入到Android Studio</a></p>
-<p><a href="https://liuzhichao.com/2016/osx-download-and-build-android-source.html" target="_blank" rel="external">OS X 10.11下载和编译Android6.0源码</a></p>
-<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/" target="_blank" rel="external">Android 镜像使用帮助 清华源</a></p>
-
+<h3 id="Git-Clone-项目基本命令"><a href="#Git-Clone-项目基本命令" class="headerlink" title="Git Clone 项目基本命令"></a>Git Clone 项目基本命令</h3><p>######Git global setup<br>    git config –global user.name “IAskWind”<br>    git config –global user.email “iaskwind@foxmail.com”</p>
+<p>######Create a new repository<br>    git clone <a href="https://github.com/IAskWind/IAWExtensionTool.git" target="_blank" rel="external">https://github.com/IAskWind/IAWExtensionTool.git</a><br>    cd IAWExtensionTool<br>    touch README.md<br>    git add README.md<br>    git commit -m “add README”<br>    git push -u origin master</p>
+<p>######Existing folder or Git repository<br>    cd existing_folder<br>    git init<br>    git remote add origin <a href="https://github.com/IAskWind/IAWExtensionTool.git" target="_blank" rel="external">https://github.com/IAskWind/IAWExtensionTool.git</a><br>    git add .<br>    git commit<br>    git push -u origin master        </p>
+<h3 id="Git-tag-基本命令"><a href="#Git-tag-基本命令" class="headerlink" title="Git tag 基本命令"></a>Git tag 基本命令</h3><pre><code>git push origin --delete tag &apos;0.1.1&apos; 删除远程tag
+git tag 查看本地tag
+git tag &apos;0.1.2&apos; 本地创建tag
+git push --tags 本地tag 提交到服务器
+</code></pre><h3 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h3><pre><code>如果文件已经提交到版本库里了，然后再把它加到忽略文件里，需要删掉文件，
+然后git rm 删掉本地库，然后add pull push 到服务器即可
+</code></pre><h3 id="开源让世界更美好"><a href="#开源让世界更美好" class="headerlink" title="开源让世界更美好"></a>开源让世界更美好</h3><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3>
     
   </div>
   <footer>
     
       
   <div class="categories">
-    <a class="categories-link" href="/categories/sh/">sh</a>
+    <a class="categories-link" href="/categories/git/">git</a>
   </div>
 
       
   <div class="tags">
-    <a class="tags-link" href="/tags/Hexo/">Hexo</a>, <a class="tags-link" href="/tags/bash/">bash</a>, <a class="tags-link" href="/tags/nvm/">nvm</a>, <a class="tags-link" href="/tags/zsh/">zsh</a>
+    <a class="tags-link" href="/tags/git-clone/">git clone</a>, <a class="tags-link" href="/tags/git-tag/">git tag</a>
   </div>
 
     
@@ -121,7 +112,7 @@
 
 <section id="comment">
   <h1 class="title">评论</h1>
-  <div class="ds-thread" data-title="一些命令和文章的记录">
+  <div class="ds-thread" data-title="git 基本命令">
   </div>
 </section>
 
