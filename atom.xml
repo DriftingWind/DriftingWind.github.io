@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>漂泊的风</title>
+  <title>IAsk风</title>
   <subtitle>懂得倾听、懂得尊重、承担责任 才算成长</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -9,8 +9,8 @@
   <id>http://iaskwind.com/</id>
   
   <author>
-    <name>winston</name>
-    <email>858156848@qq.com</email>
+    <name>IAskWind</name>
+    <email>iaskwind@foxmail.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
