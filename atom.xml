@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iaskwind.com/"/>
-  <updated>2016-06-24T01:14:03.000Z</updated>
+  <updated>2016-11-18T09:22:43.000Z</updated>
   <id>http://iaskwind.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些命令和文章的记录</title>
+    <link href="http://iaskwind.com/2016/11/18/git_notes/"/>
+    <id>http://iaskwind.com/2016/11/18/git_notes/</id>
+    <published>2016-11-18T09:14:32.000Z</published>
+    <updated>2016-11-18T09:22:43.000Z</updated>
+    
+    <content type="html">&lt;p&gt;git 基本操作&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;Git-Clone-项目基本命令&quot;&gt;&lt;a href=&quot;#Git-Clone-项目基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git Clone 项目基本命令&quot;&gt;&lt;/a&gt;Git Clone 项目基本命令&lt;/h3&gt;&lt;p&gt;#####Git global setup&lt;br&gt;    git config –global user.name “IAskWind”&lt;br&gt;    git config –global user.email “iaskwind@foxmail.com”&lt;/p&gt;
+&lt;p&gt;#####Create a new repository&lt;br&gt;    git clone &lt;a href=&quot;https://github.com/IAskWind/IAWExtensionTool.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/IAskWind/IAWExtensionTool.git&lt;/a&gt;&lt;br&gt;    cd IAWExtensionTool&lt;br&gt;    touch README.md&lt;br&gt;    git add README.md&lt;br&gt;    git commit -m “add README”&lt;br&gt;    git push -u origin master&lt;/p&gt;
+&lt;p&gt;#####Existing folder or Git repository&lt;br&gt;    cd existing_folder&lt;br&gt;    git init&lt;br&gt;    git remote add origin &lt;a href=&quot;https://github.com/IAskWind/IAWExtensionTool.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/IAskWind/IAWExtensionTool.git&lt;/a&gt;&lt;br&gt;    git add .&lt;br&gt;    git commit&lt;br&gt;    git push -u origin master        &lt;/p&gt;
+&lt;h3 id=&quot;Git-tag-基本命令&quot;&gt;&lt;a href=&quot;#Git-tag-基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git tag 基本命令&quot;&gt;&lt;/a&gt;Git tag 基本命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;git push origin --delete tag &amp;apos;0.1.1&amp;apos; 删除远程tag
+git tag 查看本地tag
+git tag &amp;apos;0.1.2&amp;apos; 本地创建tag
+git push --tags 本地tag 提交到服务器
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;gitignore&quot;&gt;&lt;a href=&quot;#gitignore&quot; class=&quot;headerlink&quot; title=&quot;.gitignore&quot;&gt;&lt;/a&gt;.gitignore&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;如果文件已经提交到版本库里了，然后再把它加到忽略文件里，需要删掉文件，然后git rm 删掉本地库，然后add pull push 到服务器即可
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      git
+    
+    </summary>
+    
+      <category term="git" scheme="http://iaskwind.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://iaskwind.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>一些命令和文章的记录</title>
