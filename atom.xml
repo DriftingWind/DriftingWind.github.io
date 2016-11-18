@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iaskwind.com/"/>
-  <updated>2016-11-18T09:42:03.000Z</updated>
+  <updated>2016-11-18T09:47:21.000Z</updated>
   <id>http://iaskwind.com/</id>
   
   <author>
@@ -20,14 +20,25 @@
     <link href="http://iaskwind.com/2016/11/18/git_notes/"/>
     <id>http://iaskwind.com/2016/11/18/git_notes/</id>
     <published>2016-11-18T09:14:32.000Z</published>
-    <updated>2016-11-18T09:42:03.000Z</updated>
+    <updated>2016-11-18T09:47:21.000Z</updated>
     
     <content type="html">&lt;p&gt;git clone git tag 基本操作以及gitignore&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;Git-Clone-项目基本命令&quot;&gt;&lt;a href=&quot;#Git-Clone-项目基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git Clone 项目基本命令&quot;&gt;&lt;/a&gt;Git Clone 项目基本命令&lt;/h3&gt;&lt;p&gt;######Git global setup&lt;br&gt;    git config –global user.name “IAskWind”&lt;br&gt;    git config –global user.email “iaskwind@foxmail.com”&lt;/p&gt;
-&lt;p&gt;######Create a new repository&lt;br&gt;    git clone &lt;a href=&quot;https://github.com/IAskWind/IAWExtensionTool.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/IAskWind/IAWExtensionTool.git&lt;/a&gt;&lt;br&gt;    cd IAWExtensionTool&lt;br&gt;    touch README.md&lt;br&gt;    git add README.md&lt;br&gt;    git commit -m “add README”&lt;br&gt;    git push -u origin master&lt;/p&gt;
-&lt;p&gt;######Existing folder or Git repository&lt;br&gt;    cd existing_folder&lt;br&gt;    git init&lt;br&gt;    git remote add origin &lt;a href=&quot;https://github.com/IAskWind/IAWExtensionTool.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/IAskWind/IAWExtensionTool.git&lt;/a&gt;&lt;br&gt;    git add .&lt;br&gt;    git commit&lt;br&gt;    git push -u origin master        &lt;/p&gt;
-&lt;h3 id=&quot;Git-tag-基本命令&quot;&gt;&lt;a href=&quot;#Git-tag-基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git tag 基本命令&quot;&gt;&lt;/a&gt;Git tag 基本命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;git push origin --delete tag &amp;apos;0.1.1&amp;apos; 删除远程tag
+&lt;h3 id=&quot;Git-Clone-项目基本命令&quot;&gt;&lt;a href=&quot;#Git-Clone-项目基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git Clone 项目基本命令&quot;&gt;&lt;/a&gt;Git Clone 项目基本命令&lt;/h3&gt;&lt;h6 id=&quot;Git-global-setup&quot;&gt;&lt;a href=&quot;#Git-global-setup&quot; class=&quot;headerlink&quot; title=&quot;Git global setup&quot;&gt;&lt;/a&gt;Git global setup&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;git config --global user.name &amp;quot;IAskWind&amp;quot;
+git config --global user.email &amp;quot;iaskwind@foxmail.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;Create-a-new-repository&quot;&gt;&lt;a href=&quot;#Create-a-new-repository&quot; class=&quot;headerlink&quot; title=&quot;Create a new repository&quot;&gt;&lt;/a&gt;Create a new repository&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;git clone https://github.com/IAskWind/IAWExtensionTool.git
+cd IAWExtensionTool
+touch README.md
+git add README.md
+git commit -m &amp;quot;add README&amp;quot;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;Existing-folder-or-Git-repository&quot;&gt;&lt;a href=&quot;#Existing-folder-or-Git-repository&quot; class=&quot;headerlink&quot; title=&quot;Existing folder or Git repository&quot;&gt;&lt;/a&gt;Existing folder or Git repository&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;cd existing_folder
+git init
+git remote add origin https://github.com/IAskWind/IAWExtensionTool.git
+git add .
+git commit
+git push -u origin master        
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Git-tag-基本命令&quot;&gt;&lt;a href=&quot;#Git-tag-基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git tag 基本命令&quot;&gt;&lt;/a&gt;Git tag 基本命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;git push origin --delete tag &amp;apos;0.1.1&amp;apos; 删除远程tag
 git tag 查看本地tag
 git tag &amp;apos;0.1.2&amp;apos; 本地创建tag
 git push --tags 本地tag 提交到服务器
