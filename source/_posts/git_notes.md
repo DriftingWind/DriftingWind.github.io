@@ -1,7 +1,7 @@
 title: git 基本命令
 date: 2016-11-18 17:14:32
 categories: git
-tags: [git clone],[git tag]
+tags: [git clone,git tag]
 description: git
 
 ---
