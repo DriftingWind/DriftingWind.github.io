@@ -78,3 +78,6 @@ deploy:
   type: git
   repo: https://github.com/IAskWind/IAskWind.github.io
   branch: master
+#网易云音乐 auto=1 代表自动播放
+ musicId: 3950785 
+ auto: 1
