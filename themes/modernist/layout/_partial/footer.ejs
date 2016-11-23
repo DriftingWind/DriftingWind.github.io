@@ -1,0 +1,25 @@
+ <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  <% if (config.author){ %>
+  &copy; <%= new Date().getFullYear() %> <a href="<%- config.root %>"><%= config.author %></a>
+  <% } else { %>
+  &copy; <%= new Date().getFullYear() %> <a href="<%- config.root %>"><%= config.title %></a>
+  <% } %>
+</div>
+<!-- 网易云音乐 -->
+<div style="text-align: center">
+
+
+ <% if (config. isSingle){ %>
+<!-- 单曲 -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=<%- config.musicId %>&auto=<%- config.auto %>&height=66"></iframe>
+  <% } else { %>
+	<!-- 歌单 -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="http://music.163.com/outchain/player?type=0&id=<%- config.musicId %>&auto=<%- config.auto %>&height=90"></iframe>
+  <% } %>
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/heroicyang/hexo-theme-modernist" target="_blank">hexo-theme-modernist</a>
+   |<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+</div>
+<div class="clearfix"></div>
