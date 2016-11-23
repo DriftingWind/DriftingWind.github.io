@@ -22,7 +22,7 @@ body {
   font-weight: 300;
 }
 .wrapper {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   background: #dedede;
   -webkit-border-radius: 8px;
@@ -553,7 +553,7 @@ article footer .tags:before {
   font-size: 1.1em;
 }
 #footer {
-  width: 90%;
+  width: 80%;
   margin: 20px auto 0;
   padding: 20px 0 0;
   font-size: 0.875em;
@@ -951,7 +951,7 @@ pre .deletion {
 }
 #sidebar {
 /*默认750*/
-  max-width: 800px;
+  max-width: 80%;
   margin: 0 auto;
   padding: 10px 0;
   color: #fff;
@@ -999,6 +999,7 @@ pre .deletion {
   border-bottom: 1px solid #000;
   -webkit-box-shadow: rgba(255,255,255,0.25) 0 1px 0;
   box-shadow: rgba(255,255,255,0.25) 0 1px 0;
+/*默认没有这一行*/
   text-align: center;
 }
 #sidebar .tag small {
