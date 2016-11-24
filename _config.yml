@@ -80,6 +80,6 @@ deploy:
   branch: master
 #网易云音乐 auto=1 代表自动播放 0否;isSingle true(单曲) false(歌单)
 isSingle: false
-musicId: 490257777
+musicId: 516833873
 auto: 1
 
