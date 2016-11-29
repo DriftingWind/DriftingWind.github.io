@@ -1,0 +1,318 @@
+<a href="https://github.com/IAskWind"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>App支付iOS_Swift版本(客户端) | IAsk风</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="IAskWind">
+  
+  
+    <meta name="description" content="swift、pay">
+  
+  <meta name="description" content="swift、pay">
+<meta property="og:type" content="article">
+<meta property="og:title" content="App支付iOS_Swift版本(客户端)">
+<meta property="og:url" content="http://iaskwind.com/2016/06/24/ios_apppay_swift/index.html">
+<meta property="og:site_name" content="IAsk风">
+<meta property="og:description" content="swift、pay">
+<meta property="og:image" content="https://img.alicdn.com/top/i1/LB1PlBHKpXXXXXoXXXXXXXXXXXX">
+<meta property="og:image" content="https://img.alicdn.com/top/i1/LB1ublXKpXXXXXBaXXXXXXXXXXX">
+<meta property="og:image" content="http://iaskwind.com/images/8DCDF14A-1727-4502-9B31-650D9BDE336A.png">
+<meta property="og:updated_time" content="2016-11-29T03:17:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="App支付iOS_Swift版本(客户端)">
+<meta name="twitter:description" content="swift、pay">
+<meta name="twitter:image" content="https://img.alicdn.com/top/i1/LB1PlBHKpXXXXXoXXXXXXXXXXXX">
+  
+    <link rel="alternate" href="/atom.xml" title="IAsk风" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">IAsk风</a></h1>
+    <p><a href="/">懂得倾听、懂得尊重、承担责任 才算成长</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/06/24/ios_apppay_swift/">
+  <time datetime="2016-06-23T16:14:54.000Z">
+    2016-06-24
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">App支付iOS_Swift版本(客户端)</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+    转载请附带原文地址:<a href="/2016/06/24/ios_apppay_swift/">http://iaskwind.com/2016/06/24/ios_apppay_swift/</a>
+      <p>Swift集成支付宝，一些细节记录</p>
+<a id="more"></a>
+<h3 id="支付宝官方文档集成"><a href="#支付宝官方文档集成" class="headerlink" title="支付宝官方文档集成"></a>支付宝官方文档集成</h3><p><a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.5cfNaI&amp;treeId=193&amp;articleId=105295&amp;docType=1" target="_blank" rel="external">App支付iOS集成流程详解</a></p>
+<p>步骤1：启动IDE（如Xcode），把iOS包中的压缩文件中以下文件拷贝到项目文件夹下，并导入到项目工程中。</p>
+<pre><code>AlipaySDK.bundle
+AlipaySDK.framework
+</code></pre><p>在Build Phases选项卡的Link Binary With Libraries中，增加以下依赖：</p>
+<p><img src="https://img.alicdn.com/top/i1/LB1PlBHKpXXXXXoXXXXXXXXXXXX" alt="官方图"></p>
+<p>其中，需要注意的是：</p>
+<p>如果是Xcode 7.0之后的版本，需要添加libc++.tbd、libz.tbd；<br>如果是Xcode 7.0之前的版本，需要添加libc++.dylib、libz.dylib（如下图）。<br><img src="https://img.alicdn.com/top/i1/LB1ublXKpXXXXXBaXXXXXXXXXXX" alt="官方图"><br>步骤2：在需要调用AlipaySDK的文件中，增加头文件引用。</p>
+<pre><code>#import &lt;AlipaySDK/AlipaySDK.h&gt;
+</code></pre><h3 id="AppDelegate-Swift处理"><a href="#AppDelegate-Swift处理" class="headerlink" title="AppDelegate.Swift处理"></a>AppDelegate.Swift处理</h3><p>在AppDelegate.Swift添加支付宝回调处理</p>
+<pre><code>   //app走application(ios9)里的这个回调，网页直接走viewcontroller里面的回调
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -&gt; Bool{
+    //跳转支付宝钱包进行支付，处理支付结果
+    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { resultDict in
+        dealResultAliPay(resultDic: resultDict)
+    })
+    return true
+
+}
+
+//app走application(ios8及其以下)里的这个回调，网页直接走viewcontroller里面的回调
+func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&gt; Bool{
+    //跳转支付宝钱包进行支付，处理支付结果
+    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: {
+        resultDict in
+        dealResultAliPay(resultDic: resultDict)
+    })
+
+    return true
+}
+</code></pre><p>关于dealResultAliPay你自己可以写成公公共方法，方便后续调用。</p>
+<pre><code>func dealResultAliPay(resultDic:[AnyHashable : Any]?){
+    if let resultStatus = resultDic?[&quot;resultStatus&quot;]! {
+        if let statusCode = resultStatus as? String{
+            var msg = &quot;支付失败,请重新支付！&quot;
+            switch statusCode {
+            case &quot;9000&quot;:
+                msg = &quot;支付成功！&quot;
+                //显示成功信息，更新具体数据，返回订单记录等等处理
+                return
+            case &quot;8000&quot;:
+                msg = &quot;订单正在处理中，请留意订单记录列表!&quot;
+            case &quot;4000&quot;:
+                msg = &quot;支付失败,请重新购买套餐!&quot;
+            case &quot;5000&quot;:
+                msg = &quot;请勿重新请求!&quot;
+            case &quot;6001&quot;:
+
+                break
+            //用户取消订单
+            case &quot;6002&quot;:
+                msg = &quot;网络连接错误&quot;
+            default:
+                print(statusCode)
+            }
+           showMsg(msg)
+        }
+    }
+}
+</code></pre><h3 id="具体订单处理-订单是在服务端封装好的"><a href="#具体订单处理-订单是在服务端封装好的" class="headerlink" title="具体订单处理(订单是在服务端封装好的)"></a>具体订单处理(订单是在服务端封装好的)</h3><pre><code>   let id = packageInfoModels[(selectedIndex! as NSIndexPath).row].id
+//根据id获取后台封装好的订单套餐，发送给支付宝服务器
+    WBNetworkTool.shareNetworkTool.goAlipay(id!){
+        (responseMsgModel) in
+        let orderString = responseMsgModel.data
+        print(orderString)
+        let scheme:String = &quot;alisdkdemo&quot; //回调的标识符
+        //调用网页(没装支付宝app)会走这个回调，如果装了支付宝app，走AppDelegate里面的回调
+        AlipaySDK.defaultService().payOrder(orderString, fromScheme: scheme, callback: {
+                resultDic in
+                //调用上面的支付处理
+                dealResultAliPay(resultDic: resultDic)
+            })
+    }
+</code></pre><h3 id="处理scheme，回调标识符"><a href="#处理scheme，回调标识符" class="headerlink" title="处理scheme，回调标识符"></a>处理scheme，回调标识符</h3><p>   点击项目名称，点击“Info”选项卡，在“URL Types”选项中，点击“+”，在“URL Schemes”中输入“alisdkdemo(名字可以随意，一般唯一表示当前项目)” 跟AlipaySDK.defaultService().payOrder里的一致。这样才能保证回调正确。</p>
+<pre><code>注意：这里的URL Schemes中输入的alisdkdemo，为测试demo，实际商户的app中要填写独立的scheme，建议跟商户的app有一定的标示度，要做到和其他的商户app不重复，否则可能会导致支付宝返回的结果无法正确跳回商户app。
+</code></pre><p><img src="/images/8DCDF14A-1727-4502-9B31-650D9BDE336A.png" alt="Schemes"></p>
+<h3 id="开源让世界更美好"><a href="#开源让世界更美好" class="headerlink" title="开源让世界更美好"></a>开源让世界更美好</h3><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><a href="https://doc.open.alipay.com/" target="_blank" rel="external">蚂蚁金服开放平台</a></p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/支付/">支付</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/ios/">ios</a>, <a class="tags-link" href="/tags/pay/">pay</a>, <a class="tags-link" href="/tags/swift/">swift</a>, <a class="tags-link" href="/tags/支付宝/">支付宝</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div class="ds-thread" data-title="App支付iOS_Swift版本(客户端)">
+  </div>
+</section>
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Retrofit/">Retrofit</a><small>1</small></li>
+  
+    <li><a href="/categories/Splash/">Splash</a><small>1</small></li>
+  
+    <li><a href="/categories/git/">git</a><small>1</small></li>
+  
+    <li><a href="/categories/sh/">sh</a><small>1</small></li>
+  
+    <li><a href="/categories/支付/">支付</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AwesomeSplash/" style="font-size: 10px;">AwesomeSplash</a> <a href="/tags/GIMP/" style="font-size: 10px;">GIMP</a> <a href="/tags/GsonFormat/" style="font-size: 10px;">GsonFormat</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/PicGif/" style="font-size: 10px;">PicGif</a> <a href="/tags/Retrofit/" style="font-size: 10px;">Retrofit</a> <a href="/tags/RxAnroid/" style="font-size: 10px;">RxAnroid</a> <a href="/tags/RxJava/" style="font-size: 10px;">RxJava</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/git-clone/" style="font-size: 10px;">git clone</a> <a href="/tags/git-tag/" style="font-size: 10px;">git tag</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a> <a href="/tags/pay/" style="font-size: 10px;">pay</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/支付宝/" style="font-size: 10px;">支付宝</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近的文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/11/18/git_notes/">git 基本命令</a>
+      </li>
+    
+      <li>
+        <a href="/2016/06/24/command_notes/">一些命令和文章的记录</a>
+      </li>
+    
+      <li>
+        <a href="/2016/06/24/ios_apppay_swift/">App支付iOS_Swift版本(客户端)</a>
+      </li>
+    
+      <li>
+        <a href="/2016/06/23/AwesomeSplash_svgpath/">一步步教你利用AwesomeSplash开源项目做炫酷启动页</a>
+      </li>
+    
+      <li>
+        <a href="/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/">Retrofit、GsonFormat、RxJava、RxAndroid简单实践</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+
+  </div>
+  <footer id="footer"> <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 2016 <a href="/">IAskWind</a>
+  
+</div>
+<!-- 网易云音乐 -->
+<div style="text-align: center">
+
+
+ 
+	<!-- 歌单 -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="http://music.163.com/outchain/player?type=0&id=516833873&auto=1&height=90"></iframe>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/heroicyang/hexo-theme-modernist" target="_blank">hexo-theme-modernist</a>
+   |<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'driftingwind' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
