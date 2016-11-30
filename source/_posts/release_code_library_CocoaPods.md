@@ -161,7 +161,7 @@ You can go back to your terminal now. 说明你注册成功了。
 ###### 更新库
 	pod update	
 ### 备注 在Swift3.0
-	在库文件下创建`.swift-version`文件，里面内容为`3.0`，以保证swift库生效
+	在库文件下创建 .swift-version 文件，里面内容为 3.0 ，以保证swift库生效
 ### 其他命令
 	查看个人信息：pod trunk me
 	废除某个库：pod trunk deprecate **
