@@ -1,5 +1,5 @@
 title: App支付iOS_Swift版本(客户端) 
-date: 2016-06-24 00:14:54
+date: 2016-11-29 10:24:14
 categories: 支付
 tags: [swift,ios,pay,支付宝]
 description: swift、pay

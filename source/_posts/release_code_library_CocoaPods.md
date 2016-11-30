@@ -1,5 +1,5 @@
 title: 发布自己的代码库到CocoaPods
-date: 2016-06-24 00:14:54
+date: 2016-11-30 11:14:54
 categories: 支付
 tags: [swift,ios,pay,支付宝]
 description: swift、pay
