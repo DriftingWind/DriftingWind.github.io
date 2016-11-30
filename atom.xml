@@ -123,11 +123,118 @@ hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d 发布(清理 生
   </entry>
   
   <entry>
+    <title>App支付iOS_Swift版本(客户端)</title>
+    <link href="http://iaskwind.com/2016/06/24/ios_apppay_swift/"/>
+    <id>http://iaskwind.com/2016/06/24/ios_apppay_swift/</id>
+    <published>2016-06-23T16:14:54.000Z</published>
+    <updated>2016-11-29T03:17:26.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Swift集成支付宝，一些细节记录&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;支付宝官方文档集成&quot;&gt;&lt;a href=&quot;#支付宝官方文档集成&quot; class=&quot;headerlink&quot; title=&quot;支付宝官方文档集成&quot;&gt;&lt;/a&gt;支付宝官方文档集成&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.5cfNaI&amp;amp;treeId=193&amp;amp;articleId=105295&amp;amp;docType=1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;App支付iOS集成流程详解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;步骤1：启动IDE（如Xcode），把iOS包中的压缩文件中以下文件拷贝到项目文件夹下，并导入到项目工程中。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AlipaySDK.bundle
+AlipaySDK.framework
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在Build Phases选项卡的Link Binary With Libraries中，增加以下依赖：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/top/i1/LB1PlBHKpXXXXXoXXXXXXXXXXXX&quot; alt=&quot;官方图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;其中，需要注意的是：&lt;/p&gt;
+&lt;p&gt;如果是Xcode 7.0之后的版本，需要添加libc++.tbd、libz.tbd；&lt;br&gt;如果是Xcode 7.0之前的版本，需要添加libc++.dylib、libz.dylib（如下图）。&lt;br&gt;&lt;img src=&quot;https://img.alicdn.com/top/i1/LB1ublXKpXXXXXBaXXXXXXXXXXX&quot; alt=&quot;官方图&quot;&gt;&lt;br&gt;步骤2：在需要调用AlipaySDK的文件中，增加头文件引用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#import &amp;lt;AlipaySDK/AlipaySDK.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;AppDelegate-Swift处理&quot;&gt;&lt;a href=&quot;#AppDelegate-Swift处理&quot; class=&quot;headerlink&quot; title=&quot;AppDelegate.Swift处理&quot;&gt;&lt;/a&gt;AppDelegate.Swift处理&lt;/h3&gt;&lt;p&gt;在AppDelegate.Swift添加支付宝回调处理&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;   //app走application(ios9)里的这个回调，网页直接走viewcontroller里面的回调
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -&amp;gt; Bool{
+    //跳转支付宝钱包进行支付，处理支付结果
+    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { resultDict in
+        dealResultAliPay(resultDic: resultDict)
+    })
+    return true
+
+}
+
+//app走application(ios8及其以下)里的这个回调，网页直接走viewcontroller里面的回调
+func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&amp;gt; Bool{
+    //跳转支付宝钱包进行支付，处理支付结果
+    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: {
+        resultDict in
+        dealResultAliPay(resultDic: resultDict)
+    })
+
+    return true
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;关于dealResultAliPay你自己可以写成公公共方法，方便后续调用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func dealResultAliPay(resultDic:[AnyHashable : Any]?){
+    if let resultStatus = resultDic?[&amp;quot;resultStatus&amp;quot;]! {
+        if let statusCode = resultStatus as? String{
+            var msg = &amp;quot;支付失败,请重新支付！&amp;quot;
+            switch statusCode {
+            case &amp;quot;9000&amp;quot;:
+                msg = &amp;quot;支付成功！&amp;quot;
+                //显示成功信息，更新具体数据，返回订单记录等等处理
+                return
+            case &amp;quot;8000&amp;quot;:
+                msg = &amp;quot;订单正在处理中，请留意订单记录列表!&amp;quot;
+            case &amp;quot;4000&amp;quot;:
+                msg = &amp;quot;支付失败,请重新购买套餐!&amp;quot;
+            case &amp;quot;5000&amp;quot;:
+                msg = &amp;quot;请勿重新请求!&amp;quot;
+            case &amp;quot;6001&amp;quot;:
+
+                break
+            //用户取消订单
+            case &amp;quot;6002&amp;quot;:
+                msg = &amp;quot;网络连接错误&amp;quot;
+            default:
+                print(statusCode)
+            }
+           showMsg(msg)
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;具体订单处理-订单是在服务端封装好的&quot;&gt;&lt;a href=&quot;#具体订单处理-订单是在服务端封装好的&quot; class=&quot;headerlink&quot; title=&quot;具体订单处理(订单是在服务端封装好的)&quot;&gt;&lt;/a&gt;具体订单处理(订单是在服务端封装好的)&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;   let id = packageInfoModels[(selectedIndex! as NSIndexPath).row].id
+//根据id获取后台封装好的订单套餐，发送给支付宝服务器
+    WBNetworkTool.shareNetworkTool.goAlipay(id!){
+        (responseMsgModel) in
+        let orderString = responseMsgModel.data
+        print(orderString)
+        let scheme:String = &amp;quot;alisdkdemo&amp;quot; //回调的标识符
+        //调用网页(没装支付宝app)会走这个回调，如果装了支付宝app，走AppDelegate里面的回调
+        AlipaySDK.defaultService().payOrder(orderString, fromScheme: scheme, callback: {
+                resultDic in
+                //调用上面的支付处理
+                dealResultAliPay(resultDic: resultDic)
+            })
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;处理scheme，回调标识符&quot;&gt;&lt;a href=&quot;#处理scheme，回调标识符&quot; class=&quot;headerlink&quot; title=&quot;处理scheme，回调标识符&quot;&gt;&lt;/a&gt;处理scheme，回调标识符&lt;/h3&gt;&lt;p&gt;   点击项目名称，点击“Info”选项卡，在“URL Types”选项中，点击“+”，在“URL Schemes”中输入“alisdkdemo(名字可以随意，一般唯一表示当前项目)” 跟AlipaySDK.defaultService().payOrder里的一致。这样才能保证回调正确。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;注意：这里的URL Schemes中输入的alisdkdemo，为测试demo，实际商户的app中要填写独立的scheme，建议跟商户的app有一定的标示度，要做到和其他的商户app不重复，否则可能会导致支付宝返回的结果无法正确跳回商户app。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/images/8DCDF14A-1727-4502-9B31-650D9BDE336A.png&quot; alt=&quot;Schemes&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://doc.open.alipay.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;蚂蚁金服开放平台&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      swift、pay
+    
+    </summary>
+    
+      <category term="支付" scheme="http://iaskwind.com/categories/%E6%94%AF%E4%BB%98/"/>
+    
+    
+      <category term="swift" scheme="http://iaskwind.com/tags/swift/"/>
+    
+      <category term="ios" scheme="http://iaskwind.com/tags/ios/"/>
+    
+      <category term="pay" scheme="http://iaskwind.com/tags/pay/"/>
+    
+      <category term="支付宝" scheme="http://iaskwind.com/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>发布自己的代码库到CocoaPods</title>
     <link href="http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/"/>
     <id>http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/</id>
     <published>2016-06-23T16:14:54.000Z</published>
-    <updated>2016-11-30T04:03:42.000Z</updated>
+    <updated>2016-11-30T04:06:15.000Z</updated>
     
     <content type="html">&lt;p&gt;整理自己的平时工作时的通用代码，方便给他人调用，所以写成pod库&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -236,118 +343,11 @@ git push --tags
 &lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;更新本地cocospod索引库&quot;&gt;&lt;a href=&quot;#更新本地cocospod索引库&quot; class=&quot;headerlink&quot; title=&quot;更新本地cocospod索引库&quot;&gt;&lt;/a&gt;更新本地cocospod索引库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod setup    
 &lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;查询库&quot;&gt;&lt;a href=&quot;#查询库&quot; class=&quot;headerlink&quot; title=&quot;查询库&quot;&gt;&lt;/a&gt;查询库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod search DWExtensionTool
 &lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;更新库&quot;&gt;&lt;a href=&quot;#更新库&quot; class=&quot;headerlink&quot; title=&quot;更新库&quot;&gt;&lt;/a&gt;更新库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod update    
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###备注 在Swift3.0&lt;br&gt;在库文件下创建&lt;code&gt;.swift-version&lt;/code&gt;文件，里面内容为&lt;code&gt;3.0&lt;/code&gt;，以保证swift库生效&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;备注-在Swift3-0&quot;&gt;&lt;a href=&quot;#备注-在Swift3-0&quot; class=&quot;headerlink&quot; title=&quot;备注 在Swift3.0&quot;&gt;&lt;/a&gt;备注 在Swift3.0&lt;/h3&gt;&lt;p&gt;在库文件下创建&lt;code&gt;.swift-version&lt;/code&gt;文件，里面内容为&lt;code&gt;3.0&lt;/code&gt;，以保证swift库生效&lt;/p&gt;
 &lt;h3 id=&quot;其他命令&quot;&gt;&lt;a href=&quot;#其他命令&quot; class=&quot;headerlink&quot; title=&quot;其他命令&quot;&gt;&lt;/a&gt;其他命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;查看个人信息：pod trunk me
 废除某个库：pod trunk deprecate **
 废除某个版本库：pod trunk delete ** 1.0.0
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;</content>
-    
-    <summary type="html">
-    
-      swift、pay
-    
-    </summary>
-    
-      <category term="支付" scheme="http://iaskwind.com/categories/%E6%94%AF%E4%BB%98/"/>
-    
-    
-      <category term="swift" scheme="http://iaskwind.com/tags/swift/"/>
-    
-      <category term="ios" scheme="http://iaskwind.com/tags/ios/"/>
-    
-      <category term="pay" scheme="http://iaskwind.com/tags/pay/"/>
-    
-      <category term="支付宝" scheme="http://iaskwind.com/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>App支付iOS_Swift版本(客户端)</title>
-    <link href="http://iaskwind.com/2016/06/24/ios_apppay_swift/"/>
-    <id>http://iaskwind.com/2016/06/24/ios_apppay_swift/</id>
-    <published>2016-06-23T16:14:54.000Z</published>
-    <updated>2016-11-29T03:17:26.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Swift集成支付宝，一些细节记录&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;支付宝官方文档集成&quot;&gt;&lt;a href=&quot;#支付宝官方文档集成&quot; class=&quot;headerlink&quot; title=&quot;支付宝官方文档集成&quot;&gt;&lt;/a&gt;支付宝官方文档集成&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.5cfNaI&amp;amp;treeId=193&amp;amp;articleId=105295&amp;amp;docType=1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;App支付iOS集成流程详解&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;步骤1：启动IDE（如Xcode），把iOS包中的压缩文件中以下文件拷贝到项目文件夹下，并导入到项目工程中。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;AlipaySDK.bundle
-AlipaySDK.framework
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在Build Phases选项卡的Link Binary With Libraries中，增加以下依赖：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/top/i1/LB1PlBHKpXXXXXoXXXXXXXXXXXX&quot; alt=&quot;官方图&quot;&gt;&lt;/p&gt;
-&lt;p&gt;其中，需要注意的是：&lt;/p&gt;
-&lt;p&gt;如果是Xcode 7.0之后的版本，需要添加libc++.tbd、libz.tbd；&lt;br&gt;如果是Xcode 7.0之前的版本，需要添加libc++.dylib、libz.dylib（如下图）。&lt;br&gt;&lt;img src=&quot;https://img.alicdn.com/top/i1/LB1ublXKpXXXXXBaXXXXXXXXXXX&quot; alt=&quot;官方图&quot;&gt;&lt;br&gt;步骤2：在需要调用AlipaySDK的文件中，增加头文件引用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#import &amp;lt;AlipaySDK/AlipaySDK.h&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;AppDelegate-Swift处理&quot;&gt;&lt;a href=&quot;#AppDelegate-Swift处理&quot; class=&quot;headerlink&quot; title=&quot;AppDelegate.Swift处理&quot;&gt;&lt;/a&gt;AppDelegate.Swift处理&lt;/h3&gt;&lt;p&gt;在AppDelegate.Swift添加支付宝回调处理&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;   //app走application(ios9)里的这个回调，网页直接走viewcontroller里面的回调
-func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -&amp;gt; Bool{
-    //跳转支付宝钱包进行支付，处理支付结果
-    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { resultDict in
-        dealResultAliPay(resultDic: resultDict)
-    })
-    return true
-
-}
-
-//app走application(ios8及其以下)里的这个回调，网页直接走viewcontroller里面的回调
-func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&amp;gt; Bool{
-    //跳转支付宝钱包进行支付，处理支付结果
-    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: {
-        resultDict in
-        dealResultAliPay(resultDic: resultDict)
-    })
-
-    return true
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;关于dealResultAliPay你自己可以写成公公共方法，方便后续调用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;func dealResultAliPay(resultDic:[AnyHashable : Any]?){
-    if let resultStatus = resultDic?[&amp;quot;resultStatus&amp;quot;]! {
-        if let statusCode = resultStatus as? String{
-            var msg = &amp;quot;支付失败,请重新支付！&amp;quot;
-            switch statusCode {
-            case &amp;quot;9000&amp;quot;:
-                msg = &amp;quot;支付成功！&amp;quot;
-                //显示成功信息，更新具体数据，返回订单记录等等处理
-                return
-            case &amp;quot;8000&amp;quot;:
-                msg = &amp;quot;订单正在处理中，请留意订单记录列表!&amp;quot;
-            case &amp;quot;4000&amp;quot;:
-                msg = &amp;quot;支付失败,请重新购买套餐!&amp;quot;
-            case &amp;quot;5000&amp;quot;:
-                msg = &amp;quot;请勿重新请求!&amp;quot;
-            case &amp;quot;6001&amp;quot;:
-
-                break
-            //用户取消订单
-            case &amp;quot;6002&amp;quot;:
-                msg = &amp;quot;网络连接错误&amp;quot;
-            default:
-                print(statusCode)
-            }
-           showMsg(msg)
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;具体订单处理-订单是在服务端封装好的&quot;&gt;&lt;a href=&quot;#具体订单处理-订单是在服务端封装好的&quot; class=&quot;headerlink&quot; title=&quot;具体订单处理(订单是在服务端封装好的)&quot;&gt;&lt;/a&gt;具体订单处理(订单是在服务端封装好的)&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;   let id = packageInfoModels[(selectedIndex! as NSIndexPath).row].id
-//根据id获取后台封装好的订单套餐，发送给支付宝服务器
-    WBNetworkTool.shareNetworkTool.goAlipay(id!){
-        (responseMsgModel) in
-        let orderString = responseMsgModel.data
-        print(orderString)
-        let scheme:String = &amp;quot;alisdkdemo&amp;quot; //回调的标识符
-        //调用网页(没装支付宝app)会走这个回调，如果装了支付宝app，走AppDelegate里面的回调
-        AlipaySDK.defaultService().payOrder(orderString, fromScheme: scheme, callback: {
-                resultDic in
-                //调用上面的支付处理
-                dealResultAliPay(resultDic: resultDic)
-            })
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;处理scheme，回调标识符&quot;&gt;&lt;a href=&quot;#处理scheme，回调标识符&quot; class=&quot;headerlink&quot; title=&quot;处理scheme，回调标识符&quot;&gt;&lt;/a&gt;处理scheme，回调标识符&lt;/h3&gt;&lt;p&gt;   点击项目名称，点击“Info”选项卡，在“URL Types”选项中，点击“+”，在“URL Schemes”中输入“alisdkdemo(名字可以随意，一般唯一表示当前项目)” 跟AlipaySDK.defaultService().payOrder里的一致。这样才能保证回调正确。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;注意：这里的URL Schemes中输入的alisdkdemo，为测试demo，实际商户的app中要填写独立的scheme，建议跟商户的app有一定的标示度，要做到和其他的商户app不重复，否则可能会导致支付宝返回的结果无法正确跳回商户app。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/images/8DCDF14A-1727-4502-9B31-650D9BDE336A.png&quot; alt=&quot;Schemes&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://doc.open.alipay.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;蚂蚁金服开放平台&lt;/a&gt;&lt;/p&gt;
-</content>
     
     <summary type="html">
     
