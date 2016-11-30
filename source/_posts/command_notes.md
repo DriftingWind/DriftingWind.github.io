@@ -10,12 +10,27 @@ description: Hexo、bash、zsh、nvm
 
 <!--more-->
 ### Hexo 部署一些命令
-我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh
-nvm ls 列出当前安装的node版本
+	我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh
+	nvm ls 列出当前安装的node版本
 
-nvm use 用具体的版本，然后hexo 命令就能使用了，否则会出现 zsh: command not found: hexo
+	nvm use 用具体的版本，然后hexo 命令就能使用了，否则会出现 zsh: command not found:hexo
 
-hexo clean && hexo g && hexo d 发布(清理 生成 部署)
+	hexo clean && hexo g && hexo d 发布(清理 生成 部署)
+	
+[https://www.zhihu.com/question/21193762](https://www.zhihu.com/question/21193762)
+修改默认分支hexo 并且为空内容
+把博客的hexo文件，拷贝到空分支内
+修改_config.yml中的deploy参数，branch:master；
+7. 依次执行git add .、git commit -m "..."、git push origin hexo提交网站相关的文件；
+
+所有操作只需要在hexo分支下进行就可以了
+先提交 hexo分支  再部署博客
+
+三、本地资料丢失后的流程
+当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：
+
+1. 使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；
+2. 在本地新拷贝的[http://CrazyMilk.github.io](http://CrazyMilk.github.io)文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。
 
 ### 命令行切换
 切换回`bash`的命令是chsh -s /bin/bash
