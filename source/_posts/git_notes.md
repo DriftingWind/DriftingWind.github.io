@@ -41,5 +41,12 @@ git clone git tag 基本操作以及gitignore
 	如果文件已经提交到版本库里了，然后再把它加到忽略文件里，需要删掉文件，
 	然后git rm 删掉本地库，然后add pull push 到服务器即可
 	
+###### .gitignore不生效
+		如果某些文件，已经加入版本库中，在修改.gitignore是不生效的。解决方式先把本地缓存删除改变成未被track状态，再commit
+	
+	git rm -r --cached .
+	git add .
+	git commit -m 'update .gitignore'
+	
 ### 开源让世界更美好   
 ### 感谢
