@@ -19,7 +19,7 @@
 <meta property="og:url" content="http://iaskwind.com/2016/06/24/command_notes/index.html">
 <meta property="og:site_name" content="IAsk风">
 <meta property="og:description" content="Hexo、bash、zsh、nvm">
-<meta property="og:updated_time" content="2016-06-24T01:14:03.000Z">
+<meta property="og:updated_time" content="2016-11-30T03:46:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些命令和文章的记录">
 <meta name="twitter:description" content="Hexo、bash、zsh、nvm">
@@ -80,9 +80,22 @@
     转载请附带原文地址:<a href="/2016/06/24/command_notes/">http://iaskwind.com/2016/06/24/command_notes/</a>
       <p>平时用到的命令记录，防止忘记，好记性不如烂笔头。</p>
 <a id="more"></a>
-<h3 id="Hexo-部署一些命令"><a href="#Hexo-部署一些命令" class="headerlink" title="Hexo 部署一些命令"></a>Hexo 部署一些命令</h3><p>我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh<br>nvm ls 列出当前安装的node版本</p>
-<p>nvm use 用具体的版本，然后hexo 命令就能使用了，否则会出现 zsh: command not found: hexo</p>
-<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 发布(清理 生成 部署)</p>
+<h3 id="Hexo-部署一些命令"><a href="#Hexo-部署一些命令" class="headerlink" title="Hexo 部署一些命令"></a>Hexo 部署一些命令</h3><pre><code>我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh
+nvm ls 列出当前安装的node版本
+
+nvm use 用具体的版本，然后hexo 命令就能使用了，否则会出现 zsh: command not found:hexo
+
+hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 发布(清理 生成 部署)
+</code></pre><p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="external">https://www.zhihu.com/question/21193762</a><br>修改默认分支hexo 并且为空内容<br>把博客的hexo文件，拷贝到空分支内<br>修改_config.yml中的deploy参数，branch:master；</p>
+<ol>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
+</ol>
+<p>所有操作只需要在hexo分支下进行就可以了<br>先提交 hexo分支  再部署博客</p>
+<p>三、本地资料丢失后的流程<br>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<ol>
+<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；</li>
+<li>在本地新拷贝的<a href="http://CrazyMilk.github.io" target="_blank" rel="external">http://CrazyMilk.github.io</a>文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
+</ol>
 <h3 id="命令行切换"><a href="#命令行切换" class="headerlink" title="命令行切换"></a>命令行切换</h3><p>切换回<code>bash</code>的命令是chsh -s /bin/bash</p>
 <p>切换回<code>zsh</code>的命令是chsh -s /bin/zsh</p>
 <h3 id="android源码编译"><a href="#android源码编译" class="headerlink" title="android源码编译"></a>android源码编译</h3><p>在<a href="http://blog.csdn.net/wl9739/article/details/51429242" target="_blank" rel="external">Android源码的下载、编译与导入到Android Studio</a> 可能会出现下面的问题：<br>执行POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg 出现 <code>Port gmake not found</code></p>
@@ -147,7 +160,7 @@
   
     <li><a href="/categories/sh/">sh</a><small>1</small></li>
   
-    <li><a href="/categories/支付/">支付</a><small>1</small></li>
+    <li><a href="/categories/支付/">支付</a><small>2</small></li>
   
   </ul>
 </div>
@@ -160,7 +173,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AwesomeSplash/" style="font-size: 10px;">AwesomeSplash</a> <a href="/tags/GIMP/" style="font-size: 10px;">GIMP</a> <a href="/tags/GsonFormat/" style="font-size: 10px;">GsonFormat</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/PicGif/" style="font-size: 10px;">PicGif</a> <a href="/tags/Retrofit/" style="font-size: 10px;">Retrofit</a> <a href="/tags/RxAnroid/" style="font-size: 10px;">RxAnroid</a> <a href="/tags/RxJava/" style="font-size: 10px;">RxJava</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/git-clone/" style="font-size: 10px;">git clone</a> <a href="/tags/git-tag/" style="font-size: 10px;">git tag</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a> <a href="/tags/pay/" style="font-size: 10px;">pay</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/支付宝/" style="font-size: 10px;">支付宝</a>
+    <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AwesomeSplash/" style="font-size: 10px;">AwesomeSplash</a> <a href="/tags/GIMP/" style="font-size: 10px;">GIMP</a> <a href="/tags/GsonFormat/" style="font-size: 10px;">GsonFormat</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/PicGif/" style="font-size: 10px;">PicGif</a> <a href="/tags/Retrofit/" style="font-size: 10px;">Retrofit</a> <a href="/tags/RxAnroid/" style="font-size: 10px;">RxAnroid</a> <a href="/tags/RxJava/" style="font-size: 10px;">RxJava</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/git-clone/" style="font-size: 10px;">git clone</a> <a href="/tags/git-tag/" style="font-size: 10px;">git tag</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a> <a href="/tags/pay/" style="font-size: 20px;">pay</a> <a href="/tags/swift/" style="font-size: 20px;">swift</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/支付宝/" style="font-size: 20px;">支付宝</a>
   </div>
 </div>
 
@@ -186,11 +199,11 @@
       </li>
     
       <li>
-        <a href="/2016/06/23/AwesomeSplash_svgpath/">一步步教你利用AwesomeSplash开源项目做炫酷启动页</a>
+        <a href="/2016/06/24/release_code_library_CocoaPods/">发布自己的代码库到CocoaPods</a>
       </li>
     
       <li>
-        <a href="/2016/06/15/reftofit-gsonformat-rxjava-rxandroid/">Retrofit、GsonFormat、RxJava、RxAndroid简单实践</a>
+        <a href="/2016/06/23/AwesomeSplash_svgpath/">一步步教你利用AwesomeSplash开源项目做炫酷启动页</a>
       </li>
     
   </ul>

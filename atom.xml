@@ -66,13 +66,26 @@ git push --tags 本地tag 提交到服务器
     <link href="http://iaskwind.com/2016/06/24/command_notes/"/>
     <id>http://iaskwind.com/2016/06/24/command_notes/</id>
     <published>2016-06-23T16:14:54.000Z</published>
-    <updated>2016-06-24T01:14:03.000Z</updated>
+    <updated>2016-11-30T03:46:56.000Z</updated>
     
     <content type="html">&lt;p&gt;平时用到的命令记录，防止忘记，好记性不如烂笔头。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;Hexo-部署一些命令&quot;&gt;&lt;a href=&quot;#Hexo-部署一些命令&quot; class=&quot;headerlink&quot; title=&quot;Hexo 部署一些命令&quot;&gt;&lt;/a&gt;Hexo 部署一些命令&lt;/h3&gt;&lt;p&gt;我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh&lt;br&gt;nvm ls 列出当前安装的node版本&lt;/p&gt;
-&lt;p&gt;nvm use 用具体的版本，然后hexo 命令就能使用了，否则会出现 zsh: command not found: hexo&lt;/p&gt;
-&lt;p&gt;hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d 发布(清理 生成 部署)&lt;/p&gt;
+&lt;h3 id=&quot;Hexo-部署一些命令&quot;&gt;&lt;a href=&quot;#Hexo-部署一些命令&quot; class=&quot;headerlink&quot; title=&quot;Hexo 部署一些命令&quot;&gt;&lt;/a&gt;Hexo 部署一些命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh
+nvm ls 列出当前安装的node版本
+
+nvm use 用具体的版本，然后hexo 命令就能使用了，否则会出现 zsh: command not found:hexo
+
+hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d 发布(清理 生成 部署)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/21193762&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com/question/21193762&lt;/a&gt;&lt;br&gt;修改默认分支hexo 并且为空内容&lt;br&gt;把博客的hexo文件，拷贝到空分支内&lt;br&gt;修改_config.yml中的deploy参数，branch:master；&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所有操作只需要在hexo分支下进行就可以了&lt;br&gt;先提交 hexo分支  再部署博客&lt;/p&gt;
+&lt;p&gt;三、本地资料丢失后的流程&lt;br&gt;当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；&lt;/li&gt;
+&lt;li&gt;在本地新拷贝的&lt;a href=&quot;http://CrazyMilk.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://CrazyMilk.github.io&lt;/a&gt;文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&quot;命令行切换&quot;&gt;&lt;a href=&quot;#命令行切换&quot; class=&quot;headerlink&quot; title=&quot;命令行切换&quot;&gt;&lt;/a&gt;命令行切换&lt;/h3&gt;&lt;p&gt;切换回&lt;code&gt;bash&lt;/code&gt;的命令是chsh -s /bin/bash&lt;/p&gt;
 &lt;p&gt;切换回&lt;code&gt;zsh&lt;/code&gt;的命令是chsh -s /bin/zsh&lt;/p&gt;
 &lt;h3 id=&quot;android源码编译&quot;&gt;&lt;a href=&quot;#android源码编译&quot; class=&quot;headerlink&quot; title=&quot;android源码编译&quot;&gt;&lt;/a&gt;android源码编译&lt;/h3&gt;&lt;p&gt;在&lt;a href=&quot;http://blog.csdn.net/wl9739/article/details/51429242&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android源码的下载、编译与导入到Android Studio&lt;/a&gt; 可能会出现下面的问题：&lt;br&gt;执行POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg 出现 &lt;code&gt;Port gmake not found&lt;/code&gt;&lt;/p&gt;
@@ -196,6 +209,144 @@ func application(_ application: UIApplication, open url: URL, sourceApplication:
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/images/8DCDF14A-1727-4502-9B31-650D9BDE336A.png&quot; alt=&quot;Schemes&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://doc.open.alipay.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;蚂蚁金服开放平台&lt;/a&gt;&lt;/p&gt;
 </content>
+    
+    <summary type="html">
+    
+      swift、pay
+    
+    </summary>
+    
+      <category term="支付" scheme="http://iaskwind.com/categories/%E6%94%AF%E4%BB%98/"/>
+    
+    
+      <category term="swift" scheme="http://iaskwind.com/tags/swift/"/>
+    
+      <category term="ios" scheme="http://iaskwind.com/tags/ios/"/>
+    
+      <category term="pay" scheme="http://iaskwind.com/tags/pay/"/>
+    
+      <category term="支付宝" scheme="http://iaskwind.com/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>发布自己的代码库到CocoaPods</title>
+    <link href="http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/"/>
+    <id>http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/</id>
+    <published>2016-06-23T16:14:54.000Z</published>
+    <updated>2016-11-30T03:43:30.000Z</updated>
+    
+    <content type="html">&lt;p&gt;整理自己的平时工作时的通用代码，方便给他人调用，所以写成pod库&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;开始前的工作&quot;&gt;&lt;a href=&quot;#开始前的工作&quot; class=&quot;headerlink&quot; title=&quot;开始前的工作&quot;&gt;&lt;/a&gt;开始前的工作&lt;/h3&gt;&lt;p&gt;安装CocoaPods，网上有很多，我就不介绍了jiezhij。&lt;/p&gt;
+&lt;h3 id=&quot;创建pod基本模板&quot;&gt;&lt;a href=&quot;#创建pod基本模板&quot; class=&quot;headerlink&quot; title=&quot;创建pod基本模板&quot;&gt;&lt;/a&gt;创建pod基本模板&lt;/h3&gt;&lt;p&gt;使用&lt;code&gt;pod lib&lt;/code&gt;的命令,然后按照步骤提示一步一步按要求操作，即可完成模板创建&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  ~ pod lib create IAWExtensionTool
+Cloning `https://github.com/CocoaPods/pod-template.git` into `IAWExtensionTool`.
+Configuring IAWExtensionTool template.
+
+------------------------------
+
+To get you started we need to ask a few questions, this should only take a minute.
+
+If this is your first time we recommend running through with the guide:
+ - http://guides.cocoapods.org/making/using-pod-lib-create.html
+ ( hold cmd and click links to open in a browser. )
+
+
+What language do you want to use?? [ Swift / ObjC ]
+ &amp;gt; Swift
+
+Would you like to include a demo application with your library? [ Yes / No ]
+ &amp;gt; Yes
+
+Which testing frameworks will you use? [ Quick / None ]
+ &amp;gt; None
+
+Would you like to do view based testing? [ Yes / No ]
+ &amp;gt; No
+
+Running pod install on your new library.
+
+[!] No `Podfile&amp;apos; found in the project directory.
+
+ Ace! you&amp;apos;re ready to go!
+ We will start you off by opening your project in Xcode
+  open &amp;apos;IAWExtensionTool/Example/IAWExtensionTool.xcworkspace&amp;apos;
+The file /Users/winston/IAWExtensionTool/Example/    IAWExtensionTool.xcworkspace does not exist.
+
+To learn more about the template see `https://github.com/CocoaPods/pod-    template.git`.
+To learn more about creating a new pod, see `http://guides.cocoapods.org/    making/making-a-cocoapod`.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 这样模板就创建完毕了  &lt;/p&gt;
+&lt;h3 id=&quot;修改模板文件，以方便我们XCode用workspace方式打开&quot;&gt;&lt;a href=&quot;#修改模板文件，以方便我们XCode用workspace方式打开&quot; class=&quot;headerlink&quot; title=&quot;修改模板文件，以方便我们XCode用workspace方式打开&quot;&gt;&lt;/a&gt;修改模板文件，以方便我们XCode用workspace方式打开&lt;/h3&gt;&lt;p&gt;进入我们刚刚初始模板的位置，就会发现IAWExtensionTool文件夹。打开文件夹，如下图：&lt;br&gt;&lt;img src=&quot;/images/E9AC32B3-4EF6-48AA-9006-225DB4F66B36.png&quot; alt=&quot;模板库&quot;&gt;&lt;br&gt;删除Example 以及IAWExtensionTool 文件夹，这里删除，我们后面会重新创建。&lt;/p&gt;
+&lt;p&gt;打开xcode,创建IAWExtensionTool名称的&lt;code&gt;project&lt;/code&gt;，保存在IAWExtensionTool文件夹下。&lt;br&gt;打开xcode,创建IAWExtensionToolDemo名称的&lt;code&gt;Cocoa Touch Framework&lt;/code&gt;，保存在IAWExtensionTool文件夹下（不是IAWExtensionTool的project）。&lt;/p&gt;
+&lt;p&gt;创建Podfile文件,文件内容如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Uncomment this line to define a global platform for your project
+# platform :ios, &amp;apos;9.0&amp;apos;
+source &amp;apos;https://github.com/CocoaPods/Specs.git&amp;apos;
+platform :ios, &amp;apos;9.0&amp;apos;
+use_frameworks!
+workspace ‘IAWExtensionTool.xcworkspace&amp;apos;
+xcodeproj &amp;apos;IAWExtensionToolDemo/IAWExtensionToolDemo.xcodeproj&amp;apos;
+target &amp;apos;IAWExtensionToolDemo&amp;apos; do
+  # Comment this line if you&amp;apos;re not using Swift and don&amp;apos;t want to use dynamic     frameworks
+
+    # Pods for IAWExtensionToolDemo
+    pod &amp;apos;SnapKit&amp;apos;, &amp;apos;~&amp;gt; 3.0.2’
+    pod &amp;apos;Kingfisher&amp;apos;
+    pod &amp;apos;SVProgressHUD&amp;apos;, :git =&amp;gt; &amp;apos;https://github.com/SVProgressHUD/        SVProgressHUD.git&amp;apos;
+    pod &amp;quot;FDFullscreenPopGesture&amp;quot;, &amp;quot;~&amp;gt; 1.1&amp;quot;
+    pod &amp;apos;Alamofire&amp;apos;, &amp;apos;~&amp;gt; 4.0.1&amp;apos;
+    pod &amp;apos;SwiftyJSON&amp;apos;, &amp;apos;~&amp;gt; 3.0.0&amp;apos;
+    pod &amp;apos;AlamofireObjectMapper&amp;apos;, &amp;apos;~&amp;gt; 4.0&amp;apos;
+    pod &amp;apos;MJRefresh&amp;apos;, &amp;apos;~&amp;gt; 3.1.12&amp;apos;
+    pod &amp;apos;RNCryptor&amp;apos;
+end
+
+target &amp;apos;IAWExtensionTool&amp;apos; do
+      platform :ios, ‘9.0’
+      xcodeproj &amp;apos;IAWExtensionTool/IAWExtensionTool.xcodeproj&amp;apos;
+      pod &amp;apos;SnapKit&amp;apos;, &amp;apos;~&amp;gt; 3.0.2&amp;apos;
+      pod &amp;apos;SVProgressHUD&amp;apos;, :git =&amp;gt; &amp;apos;https://github.com/SVProgressHUD/        SVProgressHUD.git&amp;apos;
+      pod &amp;apos;RNCryptor&amp;apos;
+      pod &amp;apos;AlamofireObjectMapper&amp;apos;, &amp;apos;~&amp;gt; 4.0&amp;apos;
+      pod &amp;apos;Kingfisher&amp;apos;
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的文件内容，你可以不用这么多，你只要关心workspace名称，和你当前库名称一致，以及添加一个xcodeproj库，这个库，就是为了，给你写工具测试的地方。&lt;/p&gt;
+&lt;p&gt;然后切换到模板库的文件夹下执行pod install:&lt;br&gt;安装你的代码库需要的依赖库&lt;/p&gt;
+&lt;p&gt;安装完成后你的模板库下会生成IAWExtensionTool.xcworkspace，说明你的模板基本修改完毕了&lt;/p&gt;
+&lt;h3 id=&quot;写代码发布吧&quot;&gt;&lt;a href=&quot;#写代码发布吧&quot; class=&quot;headerlink&quot; title=&quot;写代码发布吧&quot;&gt;&lt;/a&gt;写代码发布吧&lt;/h3&gt;&lt;p&gt; 双击IAWExtensionTool.xcworkspace打开，XCode就以workspace方式管理的你的代码库，以及你对应的demo库，如下图：&lt;br&gt; &lt;img src=&quot;/images/928F58BE-FDB5-4FBF-955B-014338076DAB.png&quot; alt=&quot;最终模板&quot;&gt; &lt;/p&gt;
+&lt;p&gt;这样就方便写库与测试在一起搞定，不用来回切换XCode.&lt;/p&gt;
+&lt;h6 id=&quot;修改-podspec后缀的文件&quot;&gt;&lt;a href=&quot;#修改-podspec后缀的文件&quot; class=&quot;headerlink&quot; title=&quot;修改.podspec后缀的文件&quot;&gt;&lt;/a&gt;修改.podspec后缀的文件&lt;/h6&gt;&lt;p&gt;&lt;img src=&quot;/images/42F8F7B7-8040-401D-92E4-2F967123C785.png&quot; alt=&quot;podspec&quot;&gt; &lt;/p&gt;
+&lt;p&gt;红色框里都是需要注意的，记住上面的版本和你目前github库里的releases版本要一致 。最下面的代码路径，以及资源路径，你如果需要也可以像我那样创建，如果不需要，你只要写上你目前正确的路径即可（注意code里面创建的文件夹，只是虚拟的归类管理，在本地文件内是没有的，请在项目文件夹内手动创建文件夹，然后在xcode里执行add Files To ** 加到里面去）&lt;/p&gt;
+&lt;h6 id=&quot;然后提交代码到github&quot;&gt;&lt;a href=&quot;#然后提交代码到github&quot; class=&quot;headerlink&quot; title=&quot;然后提交代码到github&quot;&gt;&lt;/a&gt;然后提交代码到github&lt;/h6&gt;&lt;p&gt;github 上创建IAWExtensionTool库，与本地文件夹进行同步。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd existing_folder
+git init
+git remote add origin https://github.com/IAskWind/IAWExtensionTool.git
+git add .
+git commit
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;注册CocoaPods&quot;&gt;&lt;a href=&quot;#注册CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;注册CocoaPods&quot;&gt;&lt;/a&gt;注册CocoaPods&lt;/h6&gt;&lt;p&gt;执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pod trunk register iaskwind@foxmail.com &amp;apos;IAskWind&amp;apos; --description=&amp;apos;IAskWind‘s mac&amp;apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后你的邮箱会收到的标题为[CocoaPods] Confirm your session.的邮件，点击链接之后跳转页面，会看到：&lt;br&gt;You can go back to your terminal now. 说明你注册成功了。&lt;/p&gt;
+&lt;h6 id=&quot;更新代码&quot;&gt;&lt;a href=&quot;#更新代码&quot; class=&quot;headerlink&quot; title=&quot;更新代码&quot;&gt;&lt;/a&gt;更新代码&lt;/h6&gt;&lt;p&gt;我上面的版本是0.1.1 我现在更新我的代码库使其也变成0.1.1这样，我就可以发布cocospod上面了&lt;br&gt;修改代码，添加一些工具类，在demo里面测试这个方法。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git add .
+git commit -m &amp;quot;添加**工具类&amp;quot;
+git status
+git pull
+git push
+git tag
+git tag &amp;apos;0.1.1&amp;apos;
+git push --tags
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样远程github上，就有0.1.1的releases库了&lt;/p&gt;
+&lt;h6 id=&quot;本地验证-检查合法性&quot;&gt;&lt;a href=&quot;#本地验证-检查合法性&quot; class=&quot;headerlink&quot; title=&quot;本地验证 检查合法性&quot;&gt;&lt;/a&gt;本地验证 检查合法性&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod lib lint --allow-warnings
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;发布到cocospod库&quot;&gt;&lt;a href=&quot;#发布到cocospod库&quot; class=&quot;headerlink&quot; title=&quot;发布到cocospod库&quot;&gt;&lt;/a&gt;发布到cocospod库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod trunk push IAWExtensionTool.podspec --allow-warnings
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;更新本地cocospod索引库&quot;&gt;&lt;a href=&quot;#更新本地cocospod索引库&quot; class=&quot;headerlink&quot; title=&quot;更新本地cocospod索引库&quot;&gt;&lt;/a&gt;更新本地cocospod索引库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod setup    
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;查询库&quot;&gt;&lt;a href=&quot;#查询库&quot; class=&quot;headerlink&quot; title=&quot;查询库&quot;&gt;&lt;/a&gt;查询库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod search DWExtensionTool
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;更新库&quot;&gt;&lt;a href=&quot;#更新库&quot; class=&quot;headerlink&quot; title=&quot;更新库&quot;&gt;&lt;/a&gt;更新库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod update        
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;其他命令&quot;&gt;&lt;a href=&quot;#其他命令&quot; class=&quot;headerlink&quot; title=&quot;其他命令&quot;&gt;&lt;/a&gt;其他命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;查看个人信息：pod trunk me
+废除某个库：pod trunk deprecate **
+废除某个版本库：pod trunk delete ** 1.0.0
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;</content>
     
     <summary type="html">
     

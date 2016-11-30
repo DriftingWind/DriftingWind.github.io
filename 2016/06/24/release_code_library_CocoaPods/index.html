@@ -1,0 +1,349 @@
+<a href="https://github.com/IAskWind"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>发布自己的代码库到CocoaPods | IAsk风</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="IAskWind">
+  
+  
+    <meta name="description" content="swift、pay">
+  
+  <meta name="description" content="swift、pay">
+<meta property="og:type" content="article">
+<meta property="og:title" content="发布自己的代码库到CocoaPods">
+<meta property="og:url" content="http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/index.html">
+<meta property="og:site_name" content="IAsk风">
+<meta property="og:description" content="swift、pay">
+<meta property="og:image" content="http://iaskwind.com/images/E9AC32B3-4EF6-48AA-9006-225DB4F66B36.png">
+<meta property="og:image" content="http://iaskwind.com/images/928F58BE-FDB5-4FBF-955B-014338076DAB.png">
+<meta property="og:image" content="http://iaskwind.com/images/42F8F7B7-8040-401D-92E4-2F967123C785.png">
+<meta property="og:updated_time" content="2016-11-30T03:43:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="发布自己的代码库到CocoaPods">
+<meta name="twitter:description" content="swift、pay">
+<meta name="twitter:image" content="http://iaskwind.com/images/E9AC32B3-4EF6-48AA-9006-225DB4F66B36.png">
+  
+    <link rel="alternate" href="/atom.xml" title="IAsk风" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">IAsk风</a></h1>
+    <p><a href="/">懂得倾听、懂得尊重、承担责任 才算成长</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/06/24/release_code_library_CocoaPods/">
+  <time datetime="2016-06-23T16:14:54.000Z">
+    2016-06-24
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">发布自己的代码库到CocoaPods</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+    转载请附带原文地址:<a href="/2016/06/24/release_code_library_CocoaPods/">http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/</a>
+      <p>整理自己的平时工作时的通用代码，方便给他人调用，所以写成pod库</p>
+<a id="more"></a>
+<h3 id="开始前的工作"><a href="#开始前的工作" class="headerlink" title="开始前的工作"></a>开始前的工作</h3><p>安装CocoaPods，网上有很多，我就不介绍了jiezhij。</p>
+<h3 id="创建pod基本模板"><a href="#创建pod基本模板" class="headerlink" title="创建pod基本模板"></a>创建pod基本模板</h3><p>使用<code>pod lib</code>的命令,然后按照步骤提示一步一步按要求操作，即可完成模板创建</p>
+<pre><code>➜  ~ pod lib create IAWExtensionTool
+Cloning `https://github.com/CocoaPods/pod-template.git` into `IAWExtensionTool`.
+Configuring IAWExtensionTool template.
+
+------------------------------
+
+To get you started we need to ask a few questions, this should only take a minute.
+
+If this is your first time we recommend running through with the guide:
+ - http://guides.cocoapods.org/making/using-pod-lib-create.html
+ ( hold cmd and click links to open in a browser. )
+
+
+What language do you want to use?? [ Swift / ObjC ]
+ &gt; Swift
+
+Would you like to include a demo application with your library? [ Yes / No ]
+ &gt; Yes
+
+Which testing frameworks will you use? [ Quick / None ]
+ &gt; None
+
+Would you like to do view based testing? [ Yes / No ]
+ &gt; No
+
+Running pod install on your new library.
+
+[!] No `Podfile&apos; found in the project directory.
+
+ Ace! you&apos;re ready to go!
+ We will start you off by opening your project in Xcode
+  open &apos;IAWExtensionTool/Example/IAWExtensionTool.xcworkspace&apos;
+The file /Users/winston/IAWExtensionTool/Example/    IAWExtensionTool.xcworkspace does not exist.
+
+To learn more about the template see `https://github.com/CocoaPods/pod-    template.git`.
+To learn more about creating a new pod, see `http://guides.cocoapods.org/    making/making-a-cocoapod`.
+</code></pre><p> 这样模板就创建完毕了  </p>
+<h3 id="修改模板文件，以方便我们XCode用workspace方式打开"><a href="#修改模板文件，以方便我们XCode用workspace方式打开" class="headerlink" title="修改模板文件，以方便我们XCode用workspace方式打开"></a>修改模板文件，以方便我们XCode用workspace方式打开</h3><p>进入我们刚刚初始模板的位置，就会发现IAWExtensionTool文件夹。打开文件夹，如下图：<br><img src="/images/E9AC32B3-4EF6-48AA-9006-225DB4F66B36.png" alt="模板库"><br>删除Example 以及IAWExtensionTool 文件夹，这里删除，我们后面会重新创建。</p>
+<p>打开xcode,创建IAWExtensionTool名称的<code>project</code>，保存在IAWExtensionTool文件夹下。<br>打开xcode,创建IAWExtensionToolDemo名称的<code>Cocoa Touch Framework</code>，保存在IAWExtensionTool文件夹下（不是IAWExtensionTool的project）。</p>
+<p>创建Podfile文件,文件内容如下</p>
+<pre><code># Uncomment this line to define a global platform for your project
+# platform :ios, &apos;9.0&apos;
+source &apos;https://github.com/CocoaPods/Specs.git&apos;
+platform :ios, &apos;9.0&apos;
+use_frameworks!
+workspace ‘IAWExtensionTool.xcworkspace&apos;
+xcodeproj &apos;IAWExtensionToolDemo/IAWExtensionToolDemo.xcodeproj&apos;
+target &apos;IAWExtensionToolDemo&apos; do
+  # Comment this line if you&apos;re not using Swift and don&apos;t want to use dynamic     frameworks
+
+    # Pods for IAWExtensionToolDemo
+    pod &apos;SnapKit&apos;, &apos;~&gt; 3.0.2’
+    pod &apos;Kingfisher&apos;
+    pod &apos;SVProgressHUD&apos;, :git =&gt; &apos;https://github.com/SVProgressHUD/        SVProgressHUD.git&apos;
+    pod &quot;FDFullscreenPopGesture&quot;, &quot;~&gt; 1.1&quot;
+    pod &apos;Alamofire&apos;, &apos;~&gt; 4.0.1&apos;
+    pod &apos;SwiftyJSON&apos;, &apos;~&gt; 3.0.0&apos;
+    pod &apos;AlamofireObjectMapper&apos;, &apos;~&gt; 4.0&apos;
+    pod &apos;MJRefresh&apos;, &apos;~&gt; 3.1.12&apos;
+    pod &apos;RNCryptor&apos;
+end
+
+target &apos;IAWExtensionTool&apos; do
+      platform :ios, ‘9.0’
+      xcodeproj &apos;IAWExtensionTool/IAWExtensionTool.xcodeproj&apos;
+      pod &apos;SnapKit&apos;, &apos;~&gt; 3.0.2&apos;
+      pod &apos;SVProgressHUD&apos;, :git =&gt; &apos;https://github.com/SVProgressHUD/        SVProgressHUD.git&apos;
+      pod &apos;RNCryptor&apos;
+      pod &apos;AlamofireObjectMapper&apos;, &apos;~&gt; 4.0&apos;
+      pod &apos;Kingfisher&apos;
+end
+</code></pre><p>上面的文件内容，你可以不用这么多，你只要关心workspace名称，和你当前库名称一致，以及添加一个xcodeproj库，这个库，就是为了，给你写工具测试的地方。</p>
+<p>然后切换到模板库的文件夹下执行pod install:<br>安装你的代码库需要的依赖库</p>
+<p>安装完成后你的模板库下会生成IAWExtensionTool.xcworkspace，说明你的模板基本修改完毕了</p>
+<h3 id="写代码发布吧"><a href="#写代码发布吧" class="headerlink" title="写代码发布吧"></a>写代码发布吧</h3><p> 双击IAWExtensionTool.xcworkspace打开，XCode就以workspace方式管理的你的代码库，以及你对应的demo库，如下图：<br> <img src="/images/928F58BE-FDB5-4FBF-955B-014338076DAB.png" alt="最终模板"> </p>
+<p>这样就方便写库与测试在一起搞定，不用来回切换XCode.</p>
+<h6 id="修改-podspec后缀的文件"><a href="#修改-podspec后缀的文件" class="headerlink" title="修改.podspec后缀的文件"></a>修改.podspec后缀的文件</h6><p><img src="/images/42F8F7B7-8040-401D-92E4-2F967123C785.png" alt="podspec"> </p>
+<p>红色框里都是需要注意的，记住上面的版本和你目前github库里的releases版本要一致 。最下面的代码路径，以及资源路径，你如果需要也可以像我那样创建，如果不需要，你只要写上你目前正确的路径即可（注意code里面创建的文件夹，只是虚拟的归类管理，在本地文件内是没有的，请在项目文件夹内手动创建文件夹，然后在xcode里执行add Files To ** 加到里面去）</p>
+<h6 id="然后提交代码到github"><a href="#然后提交代码到github" class="headerlink" title="然后提交代码到github"></a>然后提交代码到github</h6><p>github 上创建IAWExtensionTool库，与本地文件夹进行同步。</p>
+<pre><code>cd existing_folder
+git init
+git remote add origin https://github.com/IAskWind/IAWExtensionTool.git
+git add .
+git commit
+git push -u origin master
+</code></pre><h6 id="注册CocoaPods"><a href="#注册CocoaPods" class="headerlink" title="注册CocoaPods"></a>注册CocoaPods</h6><p>执行</p>
+<pre><code>pod trunk register iaskwind@foxmail.com &apos;IAskWind&apos; --description=&apos;IAskWind‘s mac&apos;
+</code></pre><p>然后你的邮箱会收到的标题为[CocoaPods] Confirm your session.的邮件，点击链接之后跳转页面，会看到：<br>You can go back to your terminal now. 说明你注册成功了。</p>
+<h6 id="更新代码"><a href="#更新代码" class="headerlink" title="更新代码"></a>更新代码</h6><p>我上面的版本是0.1.1 我现在更新我的代码库使其也变成0.1.1这样，我就可以发布cocospod上面了<br>修改代码，添加一些工具类，在demo里面测试这个方法。</p>
+<pre><code>git add .
+git commit -m &quot;添加**工具类&quot;
+git status
+git pull
+git push
+git tag
+git tag &apos;0.1.1&apos;
+git push --tags
+</code></pre><p>这样远程github上，就有0.1.1的releases库了</p>
+<h6 id="本地验证-检查合法性"><a href="#本地验证-检查合法性" class="headerlink" title="本地验证 检查合法性"></a>本地验证 检查合法性</h6><pre><code>pod lib lint --allow-warnings
+</code></pre><h6 id="发布到cocospod库"><a href="#发布到cocospod库" class="headerlink" title="发布到cocospod库"></a>发布到cocospod库</h6><pre><code>pod trunk push IAWExtensionTool.podspec --allow-warnings
+</code></pre><h6 id="更新本地cocospod索引库"><a href="#更新本地cocospod索引库" class="headerlink" title="更新本地cocospod索引库"></a>更新本地cocospod索引库</h6><pre><code>pod setup    
+</code></pre><h6 id="查询库"><a href="#查询库" class="headerlink" title="查询库"></a>查询库</h6><pre><code>pod search DWExtensionTool
+</code></pre><h6 id="更新库"><a href="#更新库" class="headerlink" title="更新库"></a>更新库</h6><pre><code>pod update        
+</code></pre><h3 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h3><pre><code>查看个人信息：pod trunk me
+废除某个库：pod trunk deprecate **
+废除某个版本库：pod trunk delete ** 1.0.0
+</code></pre><h3 id="开源让世界更美好"><a href="#开源让世界更美好" class="headerlink" title="开源让世界更美好"></a>开源让世界更美好</h3><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3>
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/支付/">支付</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/ios/">ios</a>, <a class="tags-link" href="/tags/pay/">pay</a>, <a class="tags-link" href="/tags/swift/">swift</a>, <a class="tags-link" href="/tags/支付宝/">支付宝</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div class="ds-thread" data-title="发布自己的代码库到CocoaPods">
+  </div>
+</section>
+
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Retrofit/">Retrofit</a><small>1</small></li>
+  
+    <li><a href="/categories/Splash/">Splash</a><small>1</small></li>
+  
+    <li><a href="/categories/git/">git</a><small>1</small></li>
+  
+    <li><a href="/categories/sh/">sh</a><small>1</small></li>
+  
+    <li><a href="/categories/支付/">支付</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AwesomeSplash/" style="font-size: 10px;">AwesomeSplash</a> <a href="/tags/GIMP/" style="font-size: 10px;">GIMP</a> <a href="/tags/GsonFormat/" style="font-size: 10px;">GsonFormat</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/PicGif/" style="font-size: 10px;">PicGif</a> <a href="/tags/Retrofit/" style="font-size: 10px;">Retrofit</a> <a href="/tags/RxAnroid/" style="font-size: 10px;">RxAnroid</a> <a href="/tags/RxJava/" style="font-size: 10px;">RxJava</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/git-clone/" style="font-size: 10px;">git clone</a> <a href="/tags/git-tag/" style="font-size: 10px;">git tag</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a> <a href="/tags/pay/" style="font-size: 20px;">pay</a> <a href="/tags/swift/" style="font-size: 20px;">swift</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/支付宝/" style="font-size: 20px;">支付宝</a>
+  </div>
+</div>
+
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近的文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/11/18/git_notes/">git 基本命令</a>
+      </li>
+    
+      <li>
+        <a href="/2016/06/24/command_notes/">一些命令和文章的记录</a>
+      </li>
+    
+      <li>
+        <a href="/2016/06/24/ios_apppay_swift/">App支付iOS_Swift版本(客户端)</a>
+      </li>
+    
+      <li>
+        <a href="/2016/06/24/release_code_library_CocoaPods/">发布自己的代码库到CocoaPods</a>
+      </li>
+    
+      <li>
+        <a href="/2016/06/23/AwesomeSplash_svgpath/">一步步教你利用AwesomeSplash开源项目做炫酷启动页</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+
+  </div>
+  <footer id="footer"> <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 2016 <a href="/">IAskWind</a>
+  
+</div>
+<!-- 网易云音乐 -->
+<div style="text-align: center">
+
+
+ 
+	<!-- 歌单 -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="http://music.163.com/outchain/player?type=0&id=516833873&auto=1&height=90"></iframe>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/heroicyang/hexo-theme-modernist" target="_blank">hexo-theme-modernist</a>
+   |<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'driftingwind' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
