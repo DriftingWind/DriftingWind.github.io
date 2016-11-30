@@ -234,7 +234,7 @@ func application(_ application: UIApplication, open url: URL, sourceApplication:
     <link href="http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/"/>
     <id>http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/</id>
     <published>2016-06-23T16:14:54.000Z</published>
-    <updated>2016-11-30T04:08:59.000Z</updated>
+    <updated>2016-11-30T04:12:33.000Z</updated>
     
     <content type="html">&lt;p&gt;整理自己的平时工作时的通用代码，方便给他人调用，所以写成pod库&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -343,7 +343,7 @@ git push --tags
 &lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;更新本地cocospod索引库&quot;&gt;&lt;a href=&quot;#更新本地cocospod索引库&quot; class=&quot;headerlink&quot; title=&quot;更新本地cocospod索引库&quot;&gt;&lt;/a&gt;更新本地cocospod索引库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod setup    
 &lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;查询库&quot;&gt;&lt;a href=&quot;#查询库&quot; class=&quot;headerlink&quot; title=&quot;查询库&quot;&gt;&lt;/a&gt;查询库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod search DWExtensionTool
 &lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;更新库&quot;&gt;&lt;a href=&quot;#更新库&quot; class=&quot;headerlink&quot; title=&quot;更新库&quot;&gt;&lt;/a&gt;更新库&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;pod update    
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;备注-在Swift3-0&quot;&gt;&lt;a href=&quot;#备注-在Swift3-0&quot; class=&quot;headerlink&quot; title=&quot;备注 在Swift3.0&quot;&gt;&lt;/a&gt;备注 在Swift3.0&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;在库文件下创建`.swift-version`文件，里面内容为`3.0`，以保证swift库生效
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;备注-在Swift3-0&quot;&gt;&lt;a href=&quot;#备注-在Swift3-0&quot; class=&quot;headerlink&quot; title=&quot;备注 在Swift3.0&quot;&gt;&lt;/a&gt;备注 在Swift3.0&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;在库文件下创建 .swift-version 文件，里面内容为 3.0 ，以保证swift库生效
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;其他命令&quot;&gt;&lt;a href=&quot;#其他命令&quot; class=&quot;headerlink&quot; title=&quot;其他命令&quot;&gt;&lt;/a&gt;其他命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;查看个人信息：pod trunk me
 废除某个库：pod trunk deprecate **
 废除某个版本库：pod trunk delete ** 1.0.0
