@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iaskwind.com/"/>
-  <updated>2016-11-30T08:02:14.000Z</updated>
+  <updated>2016-11-30T08:07:15.000Z</updated>
   <id>http://iaskwind.com/</id>
   
   <author>
@@ -16,230 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>git 基本命令</title>
-    <link href="http://iaskwind.com/2016/11/18/git_notes/"/>
-    <id>http://iaskwind.com/2016/11/18/git_notes/</id>
-    <published>2016-11-18T09:14:32.000Z</published>
-    <updated>2016-11-30T08:02:14.000Z</updated>
-    
-    <content type="html">&lt;p&gt;git clone git tag 基本操作以及gitignore&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;Git-Clone-项目基本命令&quot;&gt;&lt;a href=&quot;#Git-Clone-项目基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git Clone 项目基本命令&quot;&gt;&lt;/a&gt;Git Clone 项目基本命令&lt;/h3&gt;&lt;h6 id=&quot;Git-global-setup&quot;&gt;&lt;a href=&quot;#Git-global-setup&quot; class=&quot;headerlink&quot; title=&quot;Git global setup&quot;&gt;&lt;/a&gt;Git global setup&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;git config --global user.name &amp;quot;IAskWind&amp;quot;
-git config --global user.email &amp;quot;iaskwind@foxmail.com&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;Create-a-new-repository&quot;&gt;&lt;a href=&quot;#Create-a-new-repository&quot; class=&quot;headerlink&quot; title=&quot;Create a new repository&quot;&gt;&lt;/a&gt;Create a new repository&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;git clone https://github.com/IAskWind/IAWExtensionTool.git
-cd IAWExtensionTool
-touch README.md
-git add README.md
-git commit -m &amp;quot;add README&amp;quot;
-git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;Existing-folder-or-Git-repository&quot;&gt;&lt;a href=&quot;#Existing-folder-or-Git-repository&quot; class=&quot;headerlink&quot; title=&quot;Existing folder or Git repository&quot;&gt;&lt;/a&gt;Existing folder or Git repository&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;cd existing_folder
-git init
-git remote add origin https://github.com/IAskWind/IAWExtensionTool.git
-git add .
-git commit
-git push -u origin master        
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Git-tag-基本命令&quot;&gt;&lt;a href=&quot;#Git-tag-基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git tag 基本命令&quot;&gt;&lt;/a&gt;Git tag 基本命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;git push origin --delete tag &amp;apos;0.1.1&amp;apos; 删除远程tag
-git tag 查看本地tag
-git tag &amp;apos;0.1.2&amp;apos; 本地创建tag
-git push --tags 本地tag 提交到服务器
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;gitignore&quot;&gt;&lt;a href=&quot;#gitignore&quot; class=&quot;headerlink&quot; title=&quot;.gitignore&quot;&gt;&lt;/a&gt;.gitignore&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;如果文件已经提交到版本库里了，然后再把它加到忽略文件里，需要删掉文件，
-然后git rm 删掉本地库，然后add pull push 到服务器即可
-&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;gitignore不生效&quot;&gt;&lt;a href=&quot;#gitignore不生效&quot; class=&quot;headerlink&quot; title=&quot;.gitignore不生效&quot;&gt;&lt;/a&gt;.gitignore不生效&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;    如果某些文件，已经加入版本库中，在修改.gitignore是不生效的。解决方式先把本地缓存删除改变成未被track状态，再commit
-
-git rm -r --cached .
-git add .
-git commit -m &amp;apos;update .gitignore&amp;apos;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;</content>
-    
-    <summary type="html">
-    
-      git
-    
-    </summary>
-    
-      <category term="git" scheme="http://iaskwind.com/categories/git/"/>
-    
-    
-      <category term="git clone" scheme="http://iaskwind.com/tags/git-clone/"/>
-    
-      <category term="git tag" scheme="http://iaskwind.com/tags/git-tag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>App支付iOS_Swift版本(客户端)</title>
-    <link href="http://iaskwind.com/2016/06/24/ios_apppay_swift/"/>
-    <id>http://iaskwind.com/2016/06/24/ios_apppay_swift/</id>
-    <published>2016-06-23T16:14:54.000Z</published>
-    <updated>2016-11-29T03:17:26.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Swift集成支付宝，一些细节记录&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;支付宝官方文档集成&quot;&gt;&lt;a href=&quot;#支付宝官方文档集成&quot; class=&quot;headerlink&quot; title=&quot;支付宝官方文档集成&quot;&gt;&lt;/a&gt;支付宝官方文档集成&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.5cfNaI&amp;amp;treeId=193&amp;amp;articleId=105295&amp;amp;docType=1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;App支付iOS集成流程详解&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;步骤1：启动IDE（如Xcode），把iOS包中的压缩文件中以下文件拷贝到项目文件夹下，并导入到项目工程中。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;AlipaySDK.bundle
-AlipaySDK.framework
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在Build Phases选项卡的Link Binary With Libraries中，增加以下依赖：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/top/i1/LB1PlBHKpXXXXXoXXXXXXXXXXXX&quot; alt=&quot;官方图&quot;&gt;&lt;/p&gt;
-&lt;p&gt;其中，需要注意的是：&lt;/p&gt;
-&lt;p&gt;如果是Xcode 7.0之后的版本，需要添加libc++.tbd、libz.tbd；&lt;br&gt;如果是Xcode 7.0之前的版本，需要添加libc++.dylib、libz.dylib（如下图）。&lt;br&gt;&lt;img src=&quot;https://img.alicdn.com/top/i1/LB1ublXKpXXXXXBaXXXXXXXXXXX&quot; alt=&quot;官方图&quot;&gt;&lt;br&gt;步骤2：在需要调用AlipaySDK的文件中，增加头文件引用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#import &amp;lt;AlipaySDK/AlipaySDK.h&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;AppDelegate-Swift处理&quot;&gt;&lt;a href=&quot;#AppDelegate-Swift处理&quot; class=&quot;headerlink&quot; title=&quot;AppDelegate.Swift处理&quot;&gt;&lt;/a&gt;AppDelegate.Swift处理&lt;/h3&gt;&lt;p&gt;在AppDelegate.Swift添加支付宝回调处理&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;   //app走application(ios9)里的这个回调，网页直接走viewcontroller里面的回调
-func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -&amp;gt; Bool{
-    //跳转支付宝钱包进行支付，处理支付结果
-    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { resultDict in
-        dealResultAliPay(resultDic: resultDict)
-    })
-    return true
-
-}
-
-//app走application(ios8及其以下)里的这个回调，网页直接走viewcontroller里面的回调
-func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&amp;gt; Bool{
-    //跳转支付宝钱包进行支付，处理支付结果
-    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: {
-        resultDict in
-        dealResultAliPay(resultDic: resultDict)
-    })
-
-    return true
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;关于dealResultAliPay你自己可以写成公公共方法，方便后续调用。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;func dealResultAliPay(resultDic:[AnyHashable : Any]?){
-    if let resultStatus = resultDic?[&amp;quot;resultStatus&amp;quot;]! {
-        if let statusCode = resultStatus as? String{
-            var msg = &amp;quot;支付失败,请重新支付！&amp;quot;
-            switch statusCode {
-            case &amp;quot;9000&amp;quot;:
-                msg = &amp;quot;支付成功！&amp;quot;
-                //显示成功信息，更新具体数据，返回订单记录等等处理
-                return
-            case &amp;quot;8000&amp;quot;:
-                msg = &amp;quot;订单正在处理中，请留意订单记录列表!&amp;quot;
-            case &amp;quot;4000&amp;quot;:
-                msg = &amp;quot;支付失败,请重新购买套餐!&amp;quot;
-            case &amp;quot;5000&amp;quot;:
-                msg = &amp;quot;请勿重新请求!&amp;quot;
-            case &amp;quot;6001&amp;quot;:
-
-                break
-            //用户取消订单
-            case &amp;quot;6002&amp;quot;:
-                msg = &amp;quot;网络连接错误&amp;quot;
-            default:
-                print(statusCode)
-            }
-           showMsg(msg)
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;具体订单处理-订单是在服务端封装好的&quot;&gt;&lt;a href=&quot;#具体订单处理-订单是在服务端封装好的&quot; class=&quot;headerlink&quot; title=&quot;具体订单处理(订单是在服务端封装好的)&quot;&gt;&lt;/a&gt;具体订单处理(订单是在服务端封装好的)&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;   let id = packageInfoModels[(selectedIndex! as NSIndexPath).row].id
-//根据id获取后台封装好的订单套餐，发送给支付宝服务器
-    WBNetworkTool.shareNetworkTool.goAlipay(id!){
-        (responseMsgModel) in
-        let orderString = responseMsgModel.data
-        print(orderString)
-        let scheme:String = &amp;quot;alisdkdemo&amp;quot; //回调的标识符
-        //调用网页(没装支付宝app)会走这个回调，如果装了支付宝app，走AppDelegate里面的回调
-        AlipaySDK.defaultService().payOrder(orderString, fromScheme: scheme, callback: {
-                resultDic in
-                //调用上面的支付处理
-                dealResultAliPay(resultDic: resultDic)
-            })
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;处理scheme，回调标识符&quot;&gt;&lt;a href=&quot;#处理scheme，回调标识符&quot; class=&quot;headerlink&quot; title=&quot;处理scheme，回调标识符&quot;&gt;&lt;/a&gt;处理scheme，回调标识符&lt;/h3&gt;&lt;p&gt;   点击项目名称，点击“Info”选项卡，在“URL Types”选项中，点击“+”，在“URL Schemes”中输入“alisdkdemo(名字可以随意，一般唯一表示当前项目)” 跟AlipaySDK.defaultService().payOrder里的一致。这样才能保证回调正确。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;注意：这里的URL Schemes中输入的alisdkdemo，为测试demo，实际商户的app中要填写独立的scheme，建议跟商户的app有一定的标示度，要做到和其他的商户app不重复，否则可能会导致支付宝返回的结果无法正确跳回商户app。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/images/8DCDF14A-1727-4502-9B31-650D9BDE336A.png&quot; alt=&quot;Schemes&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://doc.open.alipay.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;蚂蚁金服开放平台&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      swift、pay
-    
-    </summary>
-    
-      <category term="支付" scheme="http://iaskwind.com/categories/%E6%94%AF%E4%BB%98/"/>
-    
-    
-      <category term="swift" scheme="http://iaskwind.com/tags/swift/"/>
-    
-      <category term="ios" scheme="http://iaskwind.com/tags/ios/"/>
-    
-      <category term="pay" scheme="http://iaskwind.com/tags/pay/"/>
-    
-      <category term="支付宝" scheme="http://iaskwind.com/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些命令和文章的记录</title>
-    <link href="http://iaskwind.com/2016/06/24/command_notes/"/>
-    <id>http://iaskwind.com/2016/06/24/command_notes/</id>
-    <published>2016-06-23T16:14:54.000Z</published>
-    <updated>2016-11-30T03:46:56.000Z</updated>
-    
-    <content type="html">&lt;p&gt;平时用到的命令记录，防止忘记，好记性不如烂笔头。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;Hexo-部署一些命令&quot;&gt;&lt;a href=&quot;#Hexo-部署一些命令&quot; class=&quot;headerlink&quot; title=&quot;Hexo 部署一些命令&quot;&gt;&lt;/a&gt;Hexo 部署一些命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh
-nvm ls 列出当前安装的node版本
-
-nvm use 用具体的版本，然后hexo 命令就能使用了，否则会出现 zsh: command not found:hexo
-
-hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d 发布(清理 生成 部署)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/21193762&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com/question/21193762&lt;/a&gt;&lt;br&gt;修改默认分支hexo 并且为空内容&lt;br&gt;把博客的hexo文件，拷贝到空分支内&lt;br&gt;修改_config.yml中的deploy参数，branch:master；&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;所有操作只需要在hexo分支下进行就可以了&lt;br&gt;先提交 hexo分支  再部署博客&lt;/p&gt;
-&lt;p&gt;三、本地资料丢失后的流程&lt;br&gt;当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；&lt;/li&gt;
-&lt;li&gt;在本地新拷贝的&lt;a href=&quot;http://CrazyMilk.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://CrazyMilk.github.io&lt;/a&gt;文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;命令行切换&quot;&gt;&lt;a href=&quot;#命令行切换&quot; class=&quot;headerlink&quot; title=&quot;命令行切换&quot;&gt;&lt;/a&gt;命令行切换&lt;/h3&gt;&lt;p&gt;切换回&lt;code&gt;bash&lt;/code&gt;的命令是chsh -s /bin/bash&lt;/p&gt;
-&lt;p&gt;切换回&lt;code&gt;zsh&lt;/code&gt;的命令是chsh -s /bin/zsh&lt;/p&gt;
-&lt;h3 id=&quot;android源码编译&quot;&gt;&lt;a href=&quot;#android源码编译&quot; class=&quot;headerlink&quot; title=&quot;android源码编译&quot;&gt;&lt;/a&gt;android源码编译&lt;/h3&gt;&lt;p&gt;在&lt;a href=&quot;http://blog.csdn.net/wl9739/article/details/51429242&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android源码的下载、编译与导入到Android Studio&lt;/a&gt; 可能会出现下面的问题：&lt;br&gt;执行POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg 出现 &lt;code&gt;Port gmake not found&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;根据官方文档在安装了MacPorts之后，使用MacPorts安装依赖工具时，可能会遇到&lt;code&gt;Port gmake not found&lt;/code&gt;的错误，在安装之前需要先执行下面的命令。&lt;/p&gt;
-&lt;p&gt;sudo port -d sync&lt;br&gt;然后就可以安装相关的工具了。&lt;/p&gt;
-&lt;p&gt;POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果安装始终失败，请直接写下载源码，下载完成后，再执行上面的命令试下&lt;/p&gt;
-&lt;p&gt;在上面文章内，我运行的时候，&lt;code&gt;没有下载驱动&lt;/code&gt;，也成功启动模拟器，进入系统了&lt;/p&gt;
-&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool&amp;amp;utm_medium=referral&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo你的博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/4eaddcbe4d12&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;5分钟 搭建免费个人博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/wl9739/article/details/51429242&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android源码的下载、编译与导入到Android Studio&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://liuzhichao.com/2016/osx-download-and-build-android-source.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OS X 10.11下载和编译Android6.0源码&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android 镜像使用帮助 清华源&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      Hexo、bash、zsh、nvm
-    
-    </summary>
-    
-      <category term="sh" scheme="http://iaskwind.com/categories/sh/"/>
-    
-    
-      <category term="Hexo" scheme="http://iaskwind.com/tags/Hexo/"/>
-    
-      <category term="bash" scheme="http://iaskwind.com/tags/bash/"/>
-    
-      <category term="zsh" scheme="http://iaskwind.com/tags/zsh/"/>
-    
-      <category term="nvm" scheme="http://iaskwind.com/tags/nvm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>发布自己的代码库到CocoaPods</title>
-    <link href="http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/"/>
-    <id>http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/</id>
-    <published>2016-06-23T16:14:54.000Z</published>
-    <updated>2016-11-30T04:12:33.000Z</updated>
+    <link href="http://iaskwind.com/2016/11/30/release_code_library_CocoaPods/"/>
+    <id>http://iaskwind.com/2016/11/30/release_code_library_CocoaPods/</id>
+    <published>2016-11-30T03:14:54.000Z</published>
+    <updated>2016-11-30T08:07:15.000Z</updated>
     
     <content type="html">&lt;p&gt;整理自己的平时工作时的通用代码，方便给他人调用，所以写成pod库&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -370,6 +151,225 @@ git push --tags
       <category term="pay" scheme="http://iaskwind.com/tags/pay/"/>
     
       <category term="支付宝" scheme="http://iaskwind.com/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>App支付iOS_Swift版本(客户端)</title>
+    <link href="http://iaskwind.com/2016/11/29/ios_apppay_swift/"/>
+    <id>http://iaskwind.com/2016/11/29/ios_apppay_swift/</id>
+    <published>2016-11-29T02:24:14.000Z</published>
+    <updated>2016-11-30T08:07:46.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Swift集成支付宝，一些细节记录&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;支付宝官方文档集成&quot;&gt;&lt;a href=&quot;#支付宝官方文档集成&quot; class=&quot;headerlink&quot; title=&quot;支付宝官方文档集成&quot;&gt;&lt;/a&gt;支付宝官方文档集成&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.5cfNaI&amp;amp;treeId=193&amp;amp;articleId=105295&amp;amp;docType=1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;App支付iOS集成流程详解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;步骤1：启动IDE（如Xcode），把iOS包中的压缩文件中以下文件拷贝到项目文件夹下，并导入到项目工程中。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AlipaySDK.bundle
+AlipaySDK.framework
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在Build Phases选项卡的Link Binary With Libraries中，增加以下依赖：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/top/i1/LB1PlBHKpXXXXXoXXXXXXXXXXXX&quot; alt=&quot;官方图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;其中，需要注意的是：&lt;/p&gt;
+&lt;p&gt;如果是Xcode 7.0之后的版本，需要添加libc++.tbd、libz.tbd；&lt;br&gt;如果是Xcode 7.0之前的版本，需要添加libc++.dylib、libz.dylib（如下图）。&lt;br&gt;&lt;img src=&quot;https://img.alicdn.com/top/i1/LB1ublXKpXXXXXBaXXXXXXXXXXX&quot; alt=&quot;官方图&quot;&gt;&lt;br&gt;步骤2：在需要调用AlipaySDK的文件中，增加头文件引用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#import &amp;lt;AlipaySDK/AlipaySDK.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;AppDelegate-Swift处理&quot;&gt;&lt;a href=&quot;#AppDelegate-Swift处理&quot; class=&quot;headerlink&quot; title=&quot;AppDelegate.Swift处理&quot;&gt;&lt;/a&gt;AppDelegate.Swift处理&lt;/h3&gt;&lt;p&gt;在AppDelegate.Swift添加支付宝回调处理&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;   //app走application(ios9)里的这个回调，网页直接走viewcontroller里面的回调
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -&amp;gt; Bool{
+    //跳转支付宝钱包进行支付，处理支付结果
+    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { resultDict in
+        dealResultAliPay(resultDic: resultDict)
+    })
+    return true
+
+}
+
+//app走application(ios8及其以下)里的这个回调，网页直接走viewcontroller里面的回调
+func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&amp;gt; Bool{
+    //跳转支付宝钱包进行支付，处理支付结果
+    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: {
+        resultDict in
+        dealResultAliPay(resultDic: resultDict)
+    })
+
+    return true
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;关于dealResultAliPay你自己可以写成公公共方法，方便后续调用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func dealResultAliPay(resultDic:[AnyHashable : Any]?){
+    if let resultStatus = resultDic?[&amp;quot;resultStatus&amp;quot;]! {
+        if let statusCode = resultStatus as? String{
+            var msg = &amp;quot;支付失败,请重新支付！&amp;quot;
+            switch statusCode {
+            case &amp;quot;9000&amp;quot;:
+                msg = &amp;quot;支付成功！&amp;quot;
+                //显示成功信息，更新具体数据，返回订单记录等等处理
+                return
+            case &amp;quot;8000&amp;quot;:
+                msg = &amp;quot;订单正在处理中，请留意订单记录列表!&amp;quot;
+            case &amp;quot;4000&amp;quot;:
+                msg = &amp;quot;支付失败,请重新购买套餐!&amp;quot;
+            case &amp;quot;5000&amp;quot;:
+                msg = &amp;quot;请勿重新请求!&amp;quot;
+            case &amp;quot;6001&amp;quot;:
+
+                break
+            //用户取消订单
+            case &amp;quot;6002&amp;quot;:
+                msg = &amp;quot;网络连接错误&amp;quot;
+            default:
+                print(statusCode)
+            }
+           showMsg(msg)
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;具体订单处理-订单是在服务端封装好的&quot;&gt;&lt;a href=&quot;#具体订单处理-订单是在服务端封装好的&quot; class=&quot;headerlink&quot; title=&quot;具体订单处理(订单是在服务端封装好的)&quot;&gt;&lt;/a&gt;具体订单处理(订单是在服务端封装好的)&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;   let id = packageInfoModels[(selectedIndex! as NSIndexPath).row].id
+//根据id获取后台封装好的订单套餐，发送给支付宝服务器
+    WBNetworkTool.shareNetworkTool.goAlipay(id!){
+        (responseMsgModel) in
+        let orderString = responseMsgModel.data
+        print(orderString)
+        let scheme:String = &amp;quot;alisdkdemo&amp;quot; //回调的标识符
+        //调用网页(没装支付宝app)会走这个回调，如果装了支付宝app，走AppDelegate里面的回调
+        AlipaySDK.defaultService().payOrder(orderString, fromScheme: scheme, callback: {
+                resultDic in
+                //调用上面的支付处理
+                dealResultAliPay(resultDic: resultDic)
+            })
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;处理scheme，回调标识符&quot;&gt;&lt;a href=&quot;#处理scheme，回调标识符&quot; class=&quot;headerlink&quot; title=&quot;处理scheme，回调标识符&quot;&gt;&lt;/a&gt;处理scheme，回调标识符&lt;/h3&gt;&lt;p&gt;   点击项目名称，点击“Info”选项卡，在“URL Types”选项中，点击“+”，在“URL Schemes”中输入“alisdkdemo(名字可以随意，一般唯一表示当前项目)” 跟AlipaySDK.defaultService().payOrder里的一致。这样才能保证回调正确。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;注意：这里的URL Schemes中输入的alisdkdemo，为测试demo，实际商户的app中要填写独立的scheme，建议跟商户的app有一定的标示度，要做到和其他的商户app不重复，否则可能会导致支付宝返回的结果无法正确跳回商户app。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;/images/8DCDF14A-1727-4502-9B31-650D9BDE336A.png&quot; alt=&quot;Schemes&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://doc.open.alipay.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;蚂蚁金服开放平台&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      swift、pay
+    
+    </summary>
+    
+      <category term="支付" scheme="http://iaskwind.com/categories/%E6%94%AF%E4%BB%98/"/>
+    
+    
+      <category term="swift" scheme="http://iaskwind.com/tags/swift/"/>
+    
+      <category term="ios" scheme="http://iaskwind.com/tags/ios/"/>
+    
+      <category term="pay" scheme="http://iaskwind.com/tags/pay/"/>
+    
+      <category term="支付宝" scheme="http://iaskwind.com/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 基本命令</title>
+    <link href="http://iaskwind.com/2016/11/18/git_notes/"/>
+    <id>http://iaskwind.com/2016/11/18/git_notes/</id>
+    <published>2016-11-18T09:14:32.000Z</published>
+    <updated>2016-11-30T08:02:14.000Z</updated>
+    
+    <content type="html">&lt;p&gt;git clone git tag 基本操作以及gitignore&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;Git-Clone-项目基本命令&quot;&gt;&lt;a href=&quot;#Git-Clone-项目基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git Clone 项目基本命令&quot;&gt;&lt;/a&gt;Git Clone 项目基本命令&lt;/h3&gt;&lt;h6 id=&quot;Git-global-setup&quot;&gt;&lt;a href=&quot;#Git-global-setup&quot; class=&quot;headerlink&quot; title=&quot;Git global setup&quot;&gt;&lt;/a&gt;Git global setup&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;git config --global user.name &amp;quot;IAskWind&amp;quot;
+git config --global user.email &amp;quot;iaskwind@foxmail.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;Create-a-new-repository&quot;&gt;&lt;a href=&quot;#Create-a-new-repository&quot; class=&quot;headerlink&quot; title=&quot;Create a new repository&quot;&gt;&lt;/a&gt;Create a new repository&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;git clone https://github.com/IAskWind/IAWExtensionTool.git
+cd IAWExtensionTool
+touch README.md
+git add README.md
+git commit -m &amp;quot;add README&amp;quot;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;Existing-folder-or-Git-repository&quot;&gt;&lt;a href=&quot;#Existing-folder-or-Git-repository&quot; class=&quot;headerlink&quot; title=&quot;Existing folder or Git repository&quot;&gt;&lt;/a&gt;Existing folder or Git repository&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;cd existing_folder
+git init
+git remote add origin https://github.com/IAskWind/IAWExtensionTool.git
+git add .
+git commit
+git push -u origin master        
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Git-tag-基本命令&quot;&gt;&lt;a href=&quot;#Git-tag-基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git tag 基本命令&quot;&gt;&lt;/a&gt;Git tag 基本命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;git push origin --delete tag &amp;apos;0.1.1&amp;apos; 删除远程tag
+git tag 查看本地tag
+git tag &amp;apos;0.1.2&amp;apos; 本地创建tag
+git push --tags 本地tag 提交到服务器
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;gitignore&quot;&gt;&lt;a href=&quot;#gitignore&quot; class=&quot;headerlink&quot; title=&quot;.gitignore&quot;&gt;&lt;/a&gt;.gitignore&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;如果文件已经提交到版本库里了，然后再把它加到忽略文件里，需要删掉文件，
+然后git rm 删掉本地库，然后add pull push 到服务器即可
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;gitignore不生效&quot;&gt;&lt;a href=&quot;#gitignore不生效&quot; class=&quot;headerlink&quot; title=&quot;.gitignore不生效&quot;&gt;&lt;/a&gt;.gitignore不生效&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;    如果某些文件，已经加入版本库中，在修改.gitignore是不生效的。解决方式先把本地缓存删除改变成未被track状态，再commit
+
+git rm -r --cached .
+git add .
+git commit -m &amp;apos;update .gitignore&amp;apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      git
+    
+    </summary>
+    
+      <category term="git" scheme="http://iaskwind.com/categories/git/"/>
+    
+    
+      <category term="git clone" scheme="http://iaskwind.com/tags/git-clone/"/>
+    
+      <category term="git tag" scheme="http://iaskwind.com/tags/git-tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些命令和文章的记录</title>
+    <link href="http://iaskwind.com/2016/06/24/command_notes/"/>
+    <id>http://iaskwind.com/2016/06/24/command_notes/</id>
+    <published>2016-06-23T16:14:54.000Z</published>
+    <updated>2016-11-30T03:46:56.000Z</updated>
+    
+    <content type="html">&lt;p&gt;平时用到的命令记录，防止忘记，好记性不如烂笔头。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;Hexo-部署一些命令&quot;&gt;&lt;a href=&quot;#Hexo-部署一些命令&quot; class=&quot;headerlink&quot; title=&quot;Hexo 部署一些命令&quot;&gt;&lt;/a&gt;Hexo 部署一些命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;我的nvm命令 在zsh 下才能用 如果不是zsh 需要切回zsh
+nvm ls 列出当前安装的node版本
+
+nvm use 用具体的版本，然后hexo 命令就能使用了，否则会出现 zsh: command not found:hexo
+
+hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d 发布(清理 生成 部署)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/21193762&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com/question/21193762&lt;/a&gt;&lt;br&gt;修改默认分支hexo 并且为空内容&lt;br&gt;把博客的hexo文件，拷贝到空分支内&lt;br&gt;修改_config.yml中的deploy参数，branch:master；&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所有操作只需要在hexo分支下进行就可以了&lt;br&gt;先提交 hexo分支  再部署博客&lt;/p&gt;
+&lt;p&gt;三、本地资料丢失后的流程&lt;br&gt;当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；&lt;/li&gt;
+&lt;li&gt;在本地新拷贝的&lt;a href=&quot;http://CrazyMilk.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://CrazyMilk.github.io&lt;/a&gt;文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;命令行切换&quot;&gt;&lt;a href=&quot;#命令行切换&quot; class=&quot;headerlink&quot; title=&quot;命令行切换&quot;&gt;&lt;/a&gt;命令行切换&lt;/h3&gt;&lt;p&gt;切换回&lt;code&gt;bash&lt;/code&gt;的命令是chsh -s /bin/bash&lt;/p&gt;
+&lt;p&gt;切换回&lt;code&gt;zsh&lt;/code&gt;的命令是chsh -s /bin/zsh&lt;/p&gt;
+&lt;h3 id=&quot;android源码编译&quot;&gt;&lt;a href=&quot;#android源码编译&quot; class=&quot;headerlink&quot; title=&quot;android源码编译&quot;&gt;&lt;/a&gt;android源码编译&lt;/h3&gt;&lt;p&gt;在&lt;a href=&quot;http://blog.csdn.net/wl9739/article/details/51429242&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android源码的下载、编译与导入到Android Studio&lt;/a&gt; 可能会出现下面的问题：&lt;br&gt;执行POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg 出现 &lt;code&gt;Port gmake not found&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;根据官方文档在安装了MacPorts之后，使用MacPorts安装依赖工具时，可能会遇到&lt;code&gt;Port gmake not found&lt;/code&gt;的错误，在安装之前需要先执行下面的命令。&lt;/p&gt;
+&lt;p&gt;sudo port -d sync&lt;br&gt;然后就可以安装相关的工具了。&lt;/p&gt;
+&lt;p&gt;POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果安装始终失败，请直接写下载源码，下载完成后，再执行上面的命令试下&lt;/p&gt;
+&lt;p&gt;在上面文章内，我运行的时候，&lt;code&gt;没有下载驱动&lt;/code&gt;，也成功启动模拟器，进入系统了&lt;/p&gt;
+&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool&amp;amp;utm_medium=referral&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo你的博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/4eaddcbe4d12&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;5分钟 搭建免费个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/wl9739/article/details/51429242&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android源码的下载、编译与导入到Android Studio&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://liuzhichao.com/2016/osx-download-and-build-android-source.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OS X 10.11下载和编译Android6.0源码&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android 镜像使用帮助 清华源&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Hexo、bash、zsh、nvm
+    
+    </summary>
+    
+      <category term="sh" scheme="http://iaskwind.com/categories/sh/"/>
+    
+    
+      <category term="Hexo" scheme="http://iaskwind.com/tags/Hexo/"/>
+    
+      <category term="bash" scheme="http://iaskwind.com/tags/bash/"/>
+    
+      <category term="zsh" scheme="http://iaskwind.com/tags/zsh/"/>
+    
+      <category term="nvm" scheme="http://iaskwind.com/tags/nvm/"/>
     
   </entry>
   

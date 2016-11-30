@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://iaskwind.com/2016/11/29/ios_apppay_swift/</loc>
+    
+    <lastmod>2016-11-30T08:07:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://iaskwind.com/2016/11/30/release_code_library_CocoaPods/</loc>
+    
+    <lastmod>2016-11-30T08:07:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://iaskwind.com/2016/11/18/git_notes/</loc>
     
     <lastmod>2016-11-30T08:02:14.000Z</lastmod>
@@ -9,23 +23,9 @@
   </url>
   
   <url>
-    <loc>http://iaskwind.com/2016/06/24/release_code_library_CocoaPods/</loc>
-    
-    <lastmod>2016-11-30T04:12:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://iaskwind.com/2016/06/24/command_notes/</loc>
     
     <lastmod>2016-11-30T03:46:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://iaskwind.com/2016/06/24/ios_apppay_swift/</loc>
-    
-    <lastmod>2016-11-29T03:17:26.000Z</lastmod>
     
   </url>
   
