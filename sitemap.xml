@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://iaskwind.com/2016/11/18/git_notes/</loc>
+    
+    <lastmod>2016-12-15T12:20:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://iaskwind.com/2016/11/29/ios_apppay_swift/</loc>
     
     <lastmod>2016-12-15T02:40:13.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://iaskwind.com/2016/11/30/release_code_library_CocoaPods/</loc>
     
     <lastmod>2016-11-30T08:07:15.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://iaskwind.com/2016/11/18/git_notes/</loc>
-    
-    <lastmod>2016-11-30T08:02:14.000Z</lastmod>
     
   </url>
   

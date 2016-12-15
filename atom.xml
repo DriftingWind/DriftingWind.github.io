@@ -266,7 +266,7 @@ func application(_ application: UIApplication, open url: URL, sourceApplication:
     <link href="http://iaskwind.com/2016/11/18/git_notes/"/>
     <id>http://iaskwind.com/2016/11/18/git_notes/</id>
     <published>2016-11-18T09:14:32.000Z</published>
-    <updated>2016-11-30T08:02:14.000Z</updated>
+    <updated>2016-12-15T12:20:24.000Z</updated>
     
     <content type="html">&lt;p&gt;git clone git tag 基本操作以及gitignore&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -284,7 +284,8 @@ git remote add origin https://github.com/IAskWind/IAWExtensionTool.git
 git add .
 git commit
 git push -u origin master        
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Git-tag-基本命令&quot;&gt;&lt;a href=&quot;#Git-tag-基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git tag 基本命令&quot;&gt;&lt;/a&gt;Git tag 基本命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;git push origin --delete tag &amp;apos;0.1.1&amp;apos; 删除远程tag
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Git-tag-基本命令&quot;&gt;&lt;a href=&quot;#Git-tag-基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git tag 基本命令&quot;&gt;&lt;/a&gt;Git tag 基本命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;git tag -d &amp;apos;1.0.15&amp;apos; 删除本地tag
+git push origin --delete tag &amp;apos;0.1.1&amp;apos; 删除远程tag
 git tag 查看本地tag
 git tag &amp;apos;0.1.2&amp;apos; 本地创建tag
 git push --tags 本地tag 提交到服务器

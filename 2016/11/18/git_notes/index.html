@@ -19,7 +19,7 @@
 <meta property="og:url" content="http://iaskwind.com/2016/11/18/git_notes/index.html">
 <meta property="og:site_name" content="IAsk风">
 <meta property="og:description" content="git">
-<meta property="og:updated_time" content="2016-11-30T08:02:14.000Z">
+<meta property="og:updated_time" content="2016-12-15T12:20:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git 基本命令">
 <meta name="twitter:description" content="git">
@@ -94,7 +94,8 @@ git remote add origin https://github.com/IAskWind/IAWExtensionTool.git
 git add .
 git commit
 git push -u origin master        
-</code></pre><h3 id="Git-tag-基本命令"><a href="#Git-tag-基本命令" class="headerlink" title="Git tag 基本命令"></a>Git tag 基本命令</h3><pre><code>git push origin --delete tag &apos;0.1.1&apos; 删除远程tag
+</code></pre><h3 id="Git-tag-基本命令"><a href="#Git-tag-基本命令" class="headerlink" title="Git tag 基本命令"></a>Git tag 基本命令</h3><pre><code>git tag -d &apos;1.0.15&apos; 删除本地tag
+git push origin --delete tag &apos;0.1.1&apos; 删除远程tag
 git tag 查看本地tag
 git tag &apos;0.1.2&apos; 本地创建tag
 git push --tags 本地tag 提交到服务器
