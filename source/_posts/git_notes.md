@@ -32,6 +32,7 @@ git clone git tag 基本操作以及gitignore
 	git push -u origin master		
 		
 ### Git tag 基本命令
+	git tag -d '1.0.15' 删除本地tag
 	git push origin --delete tag '0.1.1' 删除远程tag
 	git tag 查看本地tag
 	git tag '0.1.2' 本地创建tag
