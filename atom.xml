@@ -314,11 +314,38 @@ git commit -m &amp;apos;update .gitignore&amp;apos;
   </entry>
   
   <entry>
+    <title>网址收藏</title>
+    <link href="http://iaskwind.com/2016/06/26/Bookmarking/"/>
+    <id>http://iaskwind.com/2016/06/26/Bookmarking/</id>
+    <published>2016-06-26T07:14:01.000Z</published>
+    <updated>2017-01-16T08:55:36.000Z</updated>
+    
+    <content type="html">&lt;p&gt;一些好用的网址收藏&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;博客类&quot;&gt;&lt;a href=&quot;#博客类&quot; class=&quot;headerlink&quot; title=&quot;博客类&quot;&gt;&lt;/a&gt;博客类&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;简书&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href=&quot;http://www.tuicool.com/a/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;推酷&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href=&quot;http://www.iheima.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;i黑马&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href=&quot;http://www.investorscn.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;投资家&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href=&quot;http://tech2ipo.com/10034313&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;创见&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://segmentfault.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;segmentfault&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      一些网址收藏，怕以后忘了
+    
+    </summary>
+    
+      <category term="网址" scheme="http://iaskwind.com/categories/%E7%BD%91%E5%9D%80/"/>
+    
+    
+      <category term="网址" scheme="http://iaskwind.com/tags/%E7%BD%91%E5%9D%80/"/>
+    
+      <category term="收藏" scheme="http://iaskwind.com/tags/%E6%94%B6%E8%97%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一些命令和文章的记录</title>
     <link href="http://iaskwind.com/2016/06/24/command_notes/"/>
     <id>http://iaskwind.com/2016/06/24/command_notes/</id>
     <published>2016-06-23T16:14:54.000Z</published>
-    <updated>2016-11-30T03:46:56.000Z</updated>
+    <updated>2017-01-13T03:27:16.000Z</updated>
     
     <content type="html">&lt;p&gt;平时用到的命令记录，防止忘记，好记性不如烂笔头。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -348,7 +375,16 @@ hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d 发布(清理 生
 &lt;/blockquote&gt;
 &lt;p&gt;如果安装始终失败，请直接写下载源码，下载完成后，再执行上面的命令试下&lt;/p&gt;
 &lt;p&gt;在上面文章内，我运行的时候，&lt;code&gt;没有下载驱动&lt;/code&gt;，也成功启动模拟器，进入系统了&lt;/p&gt;
-&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool&amp;amp;utm_medium=referral&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo你的博客&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Swift记录&quot;&gt;&lt;a href=&quot;#Swift记录&quot; class=&quot;headerlink&quot; title=&quot;Swift记录&quot;&gt;&lt;/a&gt;Swift记录&lt;/h3&gt;&lt;h6 id=&quot;提示&quot;&gt;&lt;a href=&quot;#提示&quot; class=&quot;headerlink&quot; title=&quot;提示&quot;&gt;&lt;/a&gt;提示&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;1.UIScrollView自动布局不需要设置contentSize，只要最后一个控件的bottom与uiscrollview的bottom相同即可
+2.tabbarcontroller 和 navigation controller 组合使用 self.view会被这两个挡住下面两句是处理代码 
+    if (self.parent?.parent as? IAWTabBarController) != nil {
+        print(&amp;quot;执行这里&amp;quot;)
+        self.navigationController?.navigationBar.isTranslucent = false;
+        self.tabBarController?.tabBar.isTranslucent = false
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Ps记录&quot;&gt;&lt;a href=&quot;#Ps记录&quot; class=&quot;headerlink&quot; title=&quot;Ps记录&quot;&gt;&lt;/a&gt;Ps记录&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;1.Ps修改图片大小
+  Ps打开图片 看右下角图层位置，如果是索引颜色，需要修改成背景，点菜单位置 图像 模式 修改成rgb颜色，然后再修改图像 图像大小，修改像素（索引颜色不能修改）
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool&amp;amp;utm_medium=referral&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo你的博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/4eaddcbe4d12&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;5分钟 搭建免费个人博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/wl9739/article/details/51429242&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android源码的下载、编译与导入到Android Studio&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://liuzhichao.com/2016/osx-download-and-build-android-source.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OS X 10.11下载和编译Android6.0源码&lt;/a&gt;&lt;/p&gt;
@@ -546,6 +582,41 @@ configSplash.setAnimTitleDuration(0);
       <category term="GIMP" scheme="http://iaskwind.com/tags/GIMP/"/>
     
       <category term="PicGif" scheme="http://iaskwind.com/tags/PicGif/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三方服务</title>
+    <link href="http://iaskwind.com/2016/06/15/Third_party_service/"/>
+    <id>http://iaskwind.com/2016/06/15/Third_party_service/</id>
+    <published>2016-06-15T15:51:42.000Z</published>
+    <updated>2017-01-16T07:20:11.000Z</updated>
+    
+    <content type="html">&lt;p&gt;第三方服务记录&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;综合&quot;&gt;&lt;a href=&quot;#综合&quot; class=&quot;headerlink&quot; title=&quot;综合&quot;&gt;&lt;/a&gt;综合&lt;/h3&gt;&lt;p&gt;服务名称:&lt;a href=&quot;http://baichuan.taobao.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;阿里百川&lt;/a&gt;&lt;br&gt;&lt;br&gt;文档地址:&lt;a href=&quot;http://baichuan.taobao.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://baichuan.taobao.com/&lt;/a&gt;&lt;br&gt;&lt;br&gt;服务简介:百川多媒体 即时通讯 用户反馈 云推送 阿里百川热修复 app监控 服务端监控 云测试&lt;br&gt;电商sdk &lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;分享&quot;&gt;&lt;a href=&quot;#分享&quot; class=&quot;headerlink&quot; title=&quot;分享&quot;&gt;&lt;/a&gt;分享&lt;/h3&gt;&lt;p&gt;服务名称:&lt;a href=&quot;http://sharesdk.mob.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShareSDK&lt;/a&gt;&lt;br&gt;&lt;br&gt;文档地址:&lt;a href=&quot;http://wiki.mob.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://wiki.mob.com/&lt;/a&gt;&lt;br&gt;&lt;br&gt;服务简介:轻松实现社会化功能 包含登录 和 统计分析&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;服务名称:&lt;a href=&quot;http://mobile.umeng.com/social?spm=0.0.0.0.2mHPva&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;友盟分享(u_share)&lt;/a&gt;&lt;br&gt;&lt;br&gt;文档地址:&lt;a href=&quot;http://mobile.umeng.com/social?spm=0.0.0.0.2mHPva&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mobile.umeng.com/social?spm=0.0.0.0.2mHPva&lt;/a&gt;&lt;br&gt;&lt;br&gt;服务简介:第三方分享&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;短信&quot;&gt;&lt;a href=&quot;#短信&quot; class=&quot;headerlink&quot; title=&quot;短信&quot;&gt;&lt;/a&gt;短信&lt;/h3&gt;&lt;p&gt;服务名称:&lt;a href=&quot;http://sms.mob.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;短信验证码SDK 2.0&lt;/a&gt;&lt;br&gt;&lt;br&gt;文档地址:&lt;a href=&quot;http://wiki.mob.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://wiki.mob.com/&lt;/a&gt;&lt;br&gt;&lt;br&gt;服务简介:快速拥有手机短信验证功能&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;统计分析&quot;&gt;&lt;a href=&quot;#统计分析&quot; class=&quot;headerlink&quot; title=&quot;统计分析&quot;&gt;&lt;/a&gt;统计分析&lt;/h3&gt;&lt;p&gt;服务名称:&lt;a href=&quot;http://mobile.umeng.com/analytics&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;统计分析(友盟)(U-app)&lt;/a&gt;&lt;br&gt;&lt;br&gt;文档地址:&lt;a href=&quot;http://mobile.umeng.com/analytics&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mobile.umeng.com/analytics&lt;/a&gt;&lt;br&gt;&lt;br&gt;服务简介:第三方统计分析&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;应用&quot;&gt;&lt;a href=&quot;#应用&quot; class=&quot;headerlink&quot; title=&quot;应用&quot;&gt;&lt;/a&gt;应用&lt;/h3&gt;&lt;p&gt;服务名称:&lt;a href=&quot;https://fir.im/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;fir.im&lt;/a&gt;&lt;br&gt;&lt;br&gt;服务简介:发布应用 应用管理 &lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;API聚合&quot;&gt;&lt;a href=&quot;#API聚合&quot; class=&quot;headerlink&quot; title=&quot;API聚合&quot;&gt;&lt;/a&gt;API聚合&lt;/h3&gt;&lt;p&gt;服务名称:&lt;a href=&quot;http://api.mob.com/#/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;第三方api聚合&lt;/a&gt;&lt;br&gt;&lt;br&gt;服务简介:第三方api聚合收集 &lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;支付&quot;&gt;&lt;a href=&quot;#支付&quot; class=&quot;headerlink&quot; title=&quot;支付&quot;&gt;&lt;/a&gt;支付&lt;/h3&gt;&lt;p&gt;服务名称:&lt;a href=&quot;http://fuqianla.net/polyPay.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;付钱啦&lt;/a&gt;&lt;br&gt;&lt;br&gt;文档地址:&lt;a href=&quot;http://fuqianla.net/quickStart.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://fuqianla.net/quickStart.html&lt;/a&gt;&lt;br&gt;&lt;br&gt;服务简介:第三方聚合支付&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h3&gt;&lt;p&gt;服务名称:&lt;a href=&quot;http://www.url2io.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;URL2io&lt;/a&gt;&lt;br&gt;&lt;br&gt;文档地址:&lt;a href=&quot;http://www.url2io.com/docs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.url2io.com/docs&lt;/a&gt;&lt;br&gt;&lt;br&gt;服务简介:提供简单、强大的网页信息提取服务&lt;br&gt;  &lt;/p&gt;
+&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      第三方服务记录
+    
+    </summary>
+    
+      <category term="服务" scheme="http://iaskwind.com/categories/%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+      <category term="第三方" scheme="http://iaskwind.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9/"/>
+    
+      <category term="服务" scheme="http://iaskwind.com/tags/%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   

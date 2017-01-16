@@ -19,7 +19,7 @@
 <meta property="og:url" content="http://iaskwind.com/2016/06/24/command_notes/index.html">
 <meta property="og:site_name" content="IAsk风">
 <meta property="og:description" content="Hexo、bash、zsh、nvm">
-<meta property="og:updated_time" content="2016-11-30T03:46:56.000Z">
+<meta property="og:updated_time" content="2017-01-13T03:27:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些命令和文章的记录">
 <meta name="twitter:description" content="Hexo、bash、zsh、nvm">
@@ -106,7 +106,16 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 发布(清理 生成 部署)
 </blockquote>
 <p>如果安装始终失败，请直接写下载源码，下载完成后，再执行上面的命令试下</p>
 <p>在上面文章内，我运行的时候，<code>没有下载驱动</code>，也成功启动模拟器，进入系统了</p>
-<h3 id="开源让世界更美好"><a href="#开源让世界更美好" class="headerlink" title="开源让世界更美好"></a>开源让世界更美好</h3><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><a href="http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">Hexo你的博客</a></p>
+<h3 id="Swift记录"><a href="#Swift记录" class="headerlink" title="Swift记录"></a>Swift记录</h3><h6 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h6><pre><code>1.UIScrollView自动布局不需要设置contentSize，只要最后一个控件的bottom与uiscrollview的bottom相同即可
+2.tabbarcontroller 和 navigation controller 组合使用 self.view会被这两个挡住下面两句是处理代码 
+    if (self.parent?.parent as? IAWTabBarController) != nil {
+        print(&quot;执行这里&quot;)
+        self.navigationController?.navigationBar.isTranslucent = false;
+        self.tabBarController?.tabBar.isTranslucent = false
+    }
+</code></pre><h3 id="Ps记录"><a href="#Ps记录" class="headerlink" title="Ps记录"></a>Ps记录</h3><pre><code>1.Ps修改图片大小
+  Ps打开图片 看右下角图层位置，如果是索引颜色，需要修改成背景，点菜单位置 图像 模式 修改成rgb颜色，然后再修改图像 图像大小，修改像素（索引颜色不能修改）
+</code></pre><h3 id="开源让世界更美好"><a href="#开源让世界更美好" class="headerlink" title="开源让世界更美好"></a>开源让世界更美好</h3><h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p><a href="http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">Hexo你的博客</a></p>
 <p><a href="http://www.jianshu.com/p/4eaddcbe4d12" target="_blank" rel="external">5分钟 搭建免费个人博客</a></p>
 <p><a href="http://blog.csdn.net/wl9739/article/details/51429242" target="_blank" rel="external">Android源码的下载、编译与导入到Android Studio</a></p>
 <p><a href="https://liuzhichao.com/2016/osx-download-and-build-android-source.html" target="_blank" rel="external">OS X 10.11下载和编译Android6.0源码</a></p>
@@ -179,6 +188,10 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 发布(清理 生成 部署)
   
     <li><a href="/categories/支付/">支付</a><small>2</small></li>
   
+    <li><a href="/categories/服务/">服务</a><small>1</small></li>
+  
+    <li><a href="/categories/网址/">网址</a><small>1</small></li>
+  
   </ul>
 </div>
 
@@ -190,7 +203,7 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 发布(清理 生成 部署)
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AwesomeSplash/" style="font-size: 10px;">AwesomeSplash</a> <a href="/tags/GIMP/" style="font-size: 10px;">GIMP</a> <a href="/tags/GsonFormat/" style="font-size: 10px;">GsonFormat</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/PicGif/" style="font-size: 10px;">PicGif</a> <a href="/tags/Retrofit/" style="font-size: 10px;">Retrofit</a> <a href="/tags/RxAnroid/" style="font-size: 10px;">RxAnroid</a> <a href="/tags/RxJava/" style="font-size: 10px;">RxJava</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/git-clone/" style="font-size: 10px;">git clone</a> <a href="/tags/git-tag/" style="font-size: 10px;">git tag</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a> <a href="/tags/pay/" style="font-size: 20px;">pay</a> <a href="/tags/swift/" style="font-size: 20px;">swift</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/支付宝/" style="font-size: 20px;">支付宝</a>
+    <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AwesomeSplash/" style="font-size: 10px;">AwesomeSplash</a> <a href="/tags/GIMP/" style="font-size: 10px;">GIMP</a> <a href="/tags/GsonFormat/" style="font-size: 10px;">GsonFormat</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/PicGif/" style="font-size: 10px;">PicGif</a> <a href="/tags/Retrofit/" style="font-size: 10px;">Retrofit</a> <a href="/tags/RxAnroid/" style="font-size: 10px;">RxAnroid</a> <a href="/tags/RxJava/" style="font-size: 10px;">RxJava</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/git-clone/" style="font-size: 10px;">git clone</a> <a href="/tags/git-tag/" style="font-size: 10px;">git tag</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a> <a href="/tags/pay/" style="font-size: 20px;">pay</a> <a href="/tags/swift/" style="font-size: 20px;">swift</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/支付宝/" style="font-size: 20px;">支付宝</a> <a href="/tags/收藏/" style="font-size: 10px;">收藏</a> <a href="/tags/服务/" style="font-size: 10px;">服务</a> <a href="/tags/第三方/" style="font-size: 10px;">第三方</a> <a href="/tags/网址/" style="font-size: 10px;">网址</a>
   </div>
 </div>
 
@@ -216,11 +229,11 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 发布(清理 生成 部署)
       </li>
     
       <li>
-        <a href="/2016/06/24/command_notes/">一些命令和文章的记录</a>
+        <a href="/2016/06/26/Bookmarking/">网址收藏</a>
       </li>
     
       <li>
-        <a href="/2016/06/23/AwesomeSplash_svgpath/">一步步教你利用AwesomeSplash开源项目做炫酷启动页</a>
+        <a href="/2016/06/24/command_notes/">一些命令和文章的记录</a>
       </li>
     
   </ul>
@@ -236,7 +249,7 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 发布(清理 生成 部署)
   <footer id="footer"> <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy; 2016 <a href="/">IAskWind</a>
+  &copy; 2017 <a href="/">IAskWind</a>
   
 </div>
 <!-- 网易云音乐 -->
