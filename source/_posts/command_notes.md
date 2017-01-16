@@ -51,6 +51,20 @@ description: Hexo、bash、zsh、nvm
 
 在上面文章内，我运行的时候，`没有下载驱动`，也成功启动模拟器，进入系统了
 
+### Swift记录
+###### 提示
+	1.UIScrollView自动布局不需要设置contentSize，只要最后一个控件的bottom与uiscrollview的bottom相同即可
+	2.tabbarcontroller 和 navigation controller 组合使用 self.view会被这两个挡住下面两句是处理代码 
+	    if (self.parent?.parent as? IAWTabBarController) != nil {
+            print("执行这里")
+            self.navigationController?.navigationBar.isTranslucent = false;
+            self.tabBarController?.tabBar.isTranslucent = false
+        }
+### Ps记录
+	1.Ps修改图片大小
+	  Ps打开图片 看右下角图层位置，如果是索引颜色，需要修改成背景，点菜单位置 图像 模式 修改成rgb颜色，然后再修改图像 图像大小，修改像素（索引颜色不能修改）
+	  
+	  
 ### 开源让世界更美好   
 ### 感谢
 [Hexo你的博客](http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool&utm_medium=referral)

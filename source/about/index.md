@@ -1,6 +1,6 @@
 
 ### 关于我
-英文名：winston  一点点进步的码农
+英文名：IAskWind  一点点进步的码农
 ### 励志名言
     1、猫在练习长跑，乌龟讽刺道：再练，也不能跑出个长跑冠军！
        猫答：我成不了豹子，却能做最棒的猫！是的，努力做好自己，做到最棒，就是成功！
@@ -12,10 +12,11 @@
 
 | 时间           |事件          | 
 | ------------- |:-------------:| 
-| 2013-Now      | Android 工程师 | 
+| 2016年10月-至今      | IOS 工程师(swift方向) | 
+| 2013年-2016年10月      | Android 工程师 | 
 | 2010-2013      | JavaEE 工程师 | 
 
 
 ### 联系方式
-邮箱：[driftingwind@foxmail.com](driftingwind@foxmail.com)
+邮箱：[iaskwind@foxmail.com](iaskwind@foxmail.com)
 
