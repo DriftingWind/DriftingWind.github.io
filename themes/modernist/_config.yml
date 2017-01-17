@@ -30,6 +30,6 @@ reward_comment: '坚持分享，您的支持将鼓励我继续创作！'
 # 打赏wording
 reward_wording: '谢谢打赏'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: https://tawen.github.io/img/alipay.jpg
+alipay: /images/ALiPay.jpg
 # 微信二维码图片地址
-weixin: https://tawen.github.io/img/weixin.jpg
+weixin: /images/WeChatPay.jpg
