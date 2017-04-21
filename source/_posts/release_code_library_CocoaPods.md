@@ -179,7 +179,7 @@ You can go back to your terminal now. 说明你注册成功了。
     注意：上面的命令的解释如下：
 
 	pod repo add REPO_NAME SOURCE_URL
-	其中的 REPO_NAME 是我们要添加的私有repo的名称（这里我们待会填的是:wshSpecs），后面是仓库的 gitlab 地址。这里做的其实是创建的工作，也就是在~/.cocoapods/repo目录下添加了一个以你的私有repo为名的文件夹，但是并没有添加spec文件。
+	其中的 REPO_NAME 是我们要添加的私有repo的名称，后面是仓库的 git 地址。这里做的其实是创建的工作，也就是在~/.cocoapods/repo目录下添加了一个以你的私有repo为名的文件夹，但是并没有添加spec文件。
 	
 5.项目路径下，执行<br/>
 	
