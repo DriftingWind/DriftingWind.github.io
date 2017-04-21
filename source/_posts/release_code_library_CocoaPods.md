@@ -10,7 +10,7 @@ description: swift、pay
 
 <!--more-->
 ### 开始前的工作
-安装CocoaPods，网上有很多，我就不介绍了jiezhij。
+安装CocoaPods，网上有很多，我就不介绍了。
 
 
 ### 创建pod基本模板
@@ -56,10 +56,10 @@ description: swift、pay
 ### 修改模板文件，以方便我们XCode用workspace方式打开
 进入我们刚刚初始模板的位置，就会发现IAWExtensionTool文件夹。打开文件夹，如下图：
 ![模板库](/images/E9AC32B3-4EF6-48AA-9006-225DB4F66B36.png)
-删除Example 以及IAWExtensionTool 文件夹，这里删除，我们后面会重新创建。
+删除Example 、_Pods.xcodeproj 以及IAWExtensionTool 文件夹，这里删除，我们后面会重新创建。
 
-打开xcode,创建IAWExtensionTool名称的`project`，保存在IAWExtensionTool文件夹下。
-打开xcode,创建IAWExtensionToolDemo名称的`Cocoa Touch Framework`，保存在IAWExtensionTool文件夹下（不是IAWExtensionTool的project）。
+打开xcode,创建IAWExtensionTool名称的`Cocoa Touch Framework`，保存在IAWExtensionTool文件夹下。
+打开xcode,创建IAWExtensionToolDemo名称的`project`，保存在IAWExtensionTool文件夹下（不是IAWExtensionTool的project）。
 
 
 创建Podfile文件,文件内容如下
@@ -166,5 +166,31 @@ You can go back to your terminal now. 说明你注册成功了。
 	查看个人信息：pod trunk me
 	废除某个库：pod trunk deprecate **
 	废除某个版本库：pod trunk delete ** 1.0.0
-### 开源让世界更美好   
+### 创建私有库
+   1.上面的步骤跟创建公开仓库一直，在仓库的.podspec中把s.source变成私有地址<br/>
+   2.提交打tag，本地验证<br/>
+   				
+   	pod lib lint --allow-warnings
+   	
+  3.创建并设置一个私有的Spec Repository 在可以创建私有库的git服务上建立一个空库，我的命名为IAWSpecs,这个仓库是用来存放我们自己所有的私有库的spec文件，就如同官方的https://github.com/CocoaPods/Specs是用来存放所有官方的specs文件一样.<br/>
+  4.执行命令<br/>
+   		
+    pod repo add IAWSpecs https://git.oschina.net/IAskWind/IAWSpecs.git
+    注意：上面的命令的解释如下：
+
+	pod repo add REPO_NAME SOURCE_URL
+	其中的 REPO_NAME 是我们要添加的私有repo的名称（这里我们待会填的是:wshSpecs），后面是仓库的 gitlab 地址。这里做的其实是创建的工作，也就是在~/.cocoapods/repo目录下添加了一个以你的私有repo为名的文件夹，但是并没有添加spec文件。
+	
+5.项目路径下，执行<br/>
+	
+	pod repo push IAWSpecs XXX.podspec --allow-warnings --verbose
+	说明： XXX你建立的私有库的podspec的名称
+
+6.私有库使用，在podfile中 官方仓库地址下,加上你自己的私有库地址：
+
+	source ‘https://git.oschina.net/IAskWind/IAWSpecs.git’        #私有仓库地址	
+
+   	   
+### 开源让世界更美好 
+[如何创建私有 CocoaPods 仓库](http://blog.csdn.net/wsh7365062/article/details/53418414)  
 ### 感谢
