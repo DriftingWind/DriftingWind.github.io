@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://iaskwind.com/images/E9AC32B3-4EF6-48AA-9006-225DB4F66B36.png">
 <meta property="og:image" content="http://iaskwind.com/images/928F58BE-FDB5-4FBF-955B-014338076DAB.png">
 <meta property="og:image" content="http://iaskwind.com/images/42F8F7B7-8040-401D-92E4-2F967123C785.png">
-<meta property="og:updated_time" content="2017-04-21T08:28:58.000Z">
+<meta property="og:updated_time" content="2017-04-21T08:33:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="发布自己的代码库到CocoaPods">
 <meta name="twitter:description" content="swift、pay">
@@ -200,7 +200,7 @@ git push --tags
 注意：上面的命令的解释如下：
 
 pod repo add REPO_NAME SOURCE_URL
-其中的 REPO_NAME 是我们要添加的私有repo的名称（这里我们待会填的是:wshSpecs），后面是仓库的 gitlab 地址。这里做的其实是创建的工作，也就是在~/.cocoapods/repo目录下添加了一个以你的私有repo为名的文件夹，但是并没有添加spec文件。
+其中的 REPO_NAME 是我们要添加的私有repo的名称，后面是仓库的 git 地址。这里做的其实是创建的工作，也就是在~/.cocoapods/repo目录下添加了一个以你的私有repo为名的文件夹，但是并没有添加spec文件。
 </code></pre><p>5.项目路径下，执行<br></p>
 <pre><code>pod repo push IAWSpecs XXX.podspec --allow-warnings --verbose
 说明： XXX你建立的私有库的podspec的名称
