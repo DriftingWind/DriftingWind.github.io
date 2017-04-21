@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iaskwind.com/"/>
-  <updated>2016-11-30T08:07:15.000Z</updated>
+  <updated>2017-04-21T08:28:58.000Z</updated>
   <id>http://iaskwind.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://iaskwind.com/2016/11/30/release_code_library_CocoaPods/"/>
     <id>http://iaskwind.com/2016/11/30/release_code_library_CocoaPods/</id>
     <published>2016-11-30T03:14:54.000Z</published>
-    <updated>2016-11-30T08:07:15.000Z</updated>
+    <updated>2017-04-21T08:28:58.000Z</updated>
     
     <content type="html">&lt;p&gt;整理自己的平时工作时的通用代码，方便给他人调用，所以写成pod库&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;开始前的工作&quot;&gt;&lt;a href=&quot;#开始前的工作&quot; class=&quot;headerlink&quot; title=&quot;开始前的工作&quot;&gt;&lt;/a&gt;开始前的工作&lt;/h3&gt;&lt;p&gt;安装CocoaPods，网上有很多，我就不介绍了jiezhij。&lt;/p&gt;
+&lt;h3 id=&quot;开始前的工作&quot;&gt;&lt;a href=&quot;#开始前的工作&quot; class=&quot;headerlink&quot; title=&quot;开始前的工作&quot;&gt;&lt;/a&gt;开始前的工作&lt;/h3&gt;&lt;p&gt;安装CocoaPods，网上有很多，我就不介绍了。&lt;/p&gt;
 &lt;h3 id=&quot;创建pod基本模板&quot;&gt;&lt;a href=&quot;#创建pod基本模板&quot; class=&quot;headerlink&quot; title=&quot;创建pod基本模板&quot;&gt;&lt;/a&gt;创建pod基本模板&lt;/h3&gt;&lt;p&gt;使用&lt;code&gt;pod lib&lt;/code&gt;的命令,然后按照步骤提示一步一步按要求操作，即可完成模板创建&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;➜  ~ pod lib create IAWExtensionTool
 Cloning `https://github.com/CocoaPods/pod-template.git` into `IAWExtensionTool`.
@@ -63,8 +63,8 @@ The file /Users/winston/IAWExtensionTool/Example/    IAWExtensionTool.xcworkspac
 To learn more about the template see `https://github.com/CocoaPods/pod-    template.git`.
 To learn more about creating a new pod, see `http://guides.cocoapods.org/    making/making-a-cocoapod`.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 这样模板就创建完毕了  &lt;/p&gt;
-&lt;h3 id=&quot;修改模板文件，以方便我们XCode用workspace方式打开&quot;&gt;&lt;a href=&quot;#修改模板文件，以方便我们XCode用workspace方式打开&quot; class=&quot;headerlink&quot; title=&quot;修改模板文件，以方便我们XCode用workspace方式打开&quot;&gt;&lt;/a&gt;修改模板文件，以方便我们XCode用workspace方式打开&lt;/h3&gt;&lt;p&gt;进入我们刚刚初始模板的位置，就会发现IAWExtensionTool文件夹。打开文件夹，如下图：&lt;br&gt;&lt;img src=&quot;/images/E9AC32B3-4EF6-48AA-9006-225DB4F66B36.png&quot; alt=&quot;模板库&quot;&gt;&lt;br&gt;删除Example 以及IAWExtensionTool 文件夹，这里删除，我们后面会重新创建。&lt;/p&gt;
-&lt;p&gt;打开xcode,创建IAWExtensionTool名称的&lt;code&gt;project&lt;/code&gt;，保存在IAWExtensionTool文件夹下。&lt;br&gt;打开xcode,创建IAWExtensionToolDemo名称的&lt;code&gt;Cocoa Touch Framework&lt;/code&gt;，保存在IAWExtensionTool文件夹下（不是IAWExtensionTool的project）。&lt;/p&gt;
+&lt;h3 id=&quot;修改模板文件，以方便我们XCode用workspace方式打开&quot;&gt;&lt;a href=&quot;#修改模板文件，以方便我们XCode用workspace方式打开&quot; class=&quot;headerlink&quot; title=&quot;修改模板文件，以方便我们XCode用workspace方式打开&quot;&gt;&lt;/a&gt;修改模板文件，以方便我们XCode用workspace方式打开&lt;/h3&gt;&lt;p&gt;进入我们刚刚初始模板的位置，就会发现IAWExtensionTool文件夹。打开文件夹，如下图：&lt;br&gt;&lt;img src=&quot;/images/E9AC32B3-4EF6-48AA-9006-225DB4F66B36.png&quot; alt=&quot;模板库&quot;&gt;&lt;br&gt;删除Example 、_Pods.xcodeproj 以及IAWExtensionTool 文件夹，这里删除，我们后面会重新创建。&lt;/p&gt;
+&lt;p&gt;打开xcode,创建IAWExtensionTool名称的&lt;code&gt;Cocoa Touch Framework&lt;/code&gt;，保存在IAWExtensionTool文件夹下。&lt;br&gt;打开xcode,创建IAWExtensionToolDemo名称的&lt;code&gt;project&lt;/code&gt;，保存在IAWExtensionTool文件夹下（不是IAWExtensionTool的project）。&lt;/p&gt;
 &lt;p&gt;创建Podfile文件,文件内容如下&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# Uncomment this line to define a global platform for your project
 # platform :ios, &amp;apos;9.0&amp;apos;
@@ -133,7 +133,21 @@ git push --tags
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;其他命令&quot;&gt;&lt;a href=&quot;#其他命令&quot; class=&quot;headerlink&quot; title=&quot;其他命令&quot;&gt;&lt;/a&gt;其他命令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;查看个人信息：pod trunk me
 废除某个库：pod trunk deprecate **
 废除某个版本库：pod trunk delete ** 1.0.0
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;</content>
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;创建私有库&quot;&gt;&lt;a href=&quot;#创建私有库&quot; class=&quot;headerlink&quot; title=&quot;创建私有库&quot;&gt;&lt;/a&gt;创建私有库&lt;/h3&gt;&lt;p&gt;   1.上面的步骤跟创建公开仓库一直，在仓库的.podspec中把s.source变成私有地址&lt;br&gt;&lt;br&gt;   2.提交打tag，本地验证&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pod lib lint --allow-warnings
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  3.创建并设置一个私有的Spec Repository 在可以创建私有库的git服务上建立一个空库，我的命名为IAWSpecs,这个仓库是用来存放我们自己所有的私有库的spec文件，就如同官方的&lt;a href=&quot;https://github.com/CocoaPods/Specs是用来存放所有官方的specs文件一样&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/CocoaPods/Specs是用来存放所有官方的specs文件一样&lt;/a&gt;.&lt;br&gt;&lt;br&gt;  4.执行命令&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pod repo add IAWSpecs https://git.oschina.net/IAskWind/IAWSpecs.git
+注意：上面的命令的解释如下：
+
+pod repo add REPO_NAME SOURCE_URL
+其中的 REPO_NAME 是我们要添加的私有repo的名称（这里我们待会填的是:wshSpecs），后面是仓库的 gitlab 地址。这里做的其实是创建的工作，也就是在~/.cocoapods/repo目录下添加了一个以你的私有repo为名的文件夹，但是并没有添加spec文件。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;5.项目路径下，执行&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pod repo push IAWSpecs XXX.podspec --allow-warnings --verbose
+说明： XXX你建立的私有库的podspec的名称
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;6.私有库使用，在podfile中 官方仓库地址下,加上你自己的私有库地址：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source ‘https://git.oschina.net/IAskWind/IAWSpecs.git’        #私有仓库地址    
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开源让世界更美好&quot;&gt;&lt;a href=&quot;#开源让世界更美好&quot; class=&quot;headerlink&quot; title=&quot;开源让世界更美好&quot;&gt;&lt;/a&gt;开源让世界更美好&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/wsh7365062/article/details/53418414&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何创建私有 CocoaPods 仓库&lt;/a&gt;  &lt;/p&gt;
+&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;</content>
     
     <summary type="html">
     
