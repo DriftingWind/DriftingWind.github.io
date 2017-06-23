@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://iaskwind.com/about/index.html</loc>
+    
+    <lastmod>2017-06-23T03:28:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://iaskwind.com/2016/11/30/release_code_library_CocoaPods/</loc>
     
     <lastmod>2017-04-21T08:33:18.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://iaskwind.com/2016/06/26/Bookmarking/</loc>
     
     <lastmod>2017-01-17T06:52:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://iaskwind.com/about/index.html</loc>
-    
-    <lastmod>2017-01-16T09:02:04.000Z</lastmod>
     
   </url>
   
