@@ -17,10 +17,10 @@
 | 2010-2013      | JavaEE 工程师 | 
 
 ### 部分项目
-开心熊宝:[http://t.cn/R5RsHFQ](http://t.cn/R5RsHFQ)<br/>
+开心熊宝:[http://t.cn/R5RsHFQ](http://t.cn/R5RsHFQ)
 介绍：基于andorid机顶盒的app项目，主要每天新的内容的推送，诗词学习，音乐儿歌，故事童谣，以及交流互动
 
-代账人手机端:[http://t.cn/R5RsKV9](http://t.cn/R5RsKV9)<br/>
+代账人手机端:[http://t.cn/R5RsKV9](http://t.cn/R5RsKV9)
 介绍：针对代账业务进行手机端上传，目前分两种角色 代账客户 代账公司，主要功能有客户管理、账套管理、征期日历、申报查询、交费列表、代账公司资料、业务跟进、发票上传、财务数据等
 
 便民办税工具箱:[http://t.cn/R5RsE1V](http://t.cn/R5RsE1V)
