@@ -5,7 +5,7 @@
 # Site
 title: IAsk风
 subtitle: 懂得倾听、懂得尊重、承担责任 才算成长
-description: IAsk风的博客 | java |android | javaee | ios | swift 
+description: IAsk风的博客 | java |android | javaee | ios | swift
 author: IAskWind
 email: iaskwind@foxmail.com
 language: zh-CN
@@ -81,5 +81,4 @@ deploy:
 #网易云音乐 auto=1 代表自动播放 0否;isSingle true(单曲) false(歌单)
 isSingle: false
 musicId: 516833873
-auto: 1
-
+auto: 0
